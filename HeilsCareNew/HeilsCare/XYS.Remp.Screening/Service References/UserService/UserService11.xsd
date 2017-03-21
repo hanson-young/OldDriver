@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/User.Model.Specialist" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/User.Model.Specialist" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="M_Netdiagnosephrase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DrId" type="xs:int" />
+      <xs:element minOccurs="0" name="EndCreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:int" />
+      <xs:element minOccurs="0" name="PhraseId" type="xs:int" />
+      <xs:element minOccurs="0" name="StartCreateTime" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_Netdiagnosephrase" nillable="true" type="tns:M_Netdiagnosephrase" />
+  <xs:complexType name="ArrayOfM_Netdiagnosephrase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_Netdiagnosephrase" nillable="true" type="tns:M_Netdiagnosephrase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_Netdiagnosephrase" nillable="true" type="tns:ArrayOfM_Netdiagnosephrase" />
+  <xs:complexType name="ArrayOfM_CategoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_CategoryItem" nillable="true" type="tns:M_CategoryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_CategoryItem" nillable="true" type="tns:ArrayOfM_CategoryItem" />
+  <xs:complexType name="M_CategoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryItemValue" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_CategoryItem" nillable="true" type="tns:M_CategoryItem" />
+  <xs:complexType name="ArrayOfM_DepartmentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_DepartmentInfo" nillable="true" type="tns:M_DepartmentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_DepartmentInfo" nillable="true" type="tns:ArrayOfM_DepartmentInfo" />
+  <xs:complexType name="M_DepartmentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartID" type="xs:int" />
+      <xs:element minOccurs="0" name="DepartName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartParentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DepartPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_DepartmentInfo" nillable="true" type="tns:M_DepartmentInfo" />
+  <xs:complexType name="M_Expertinfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppIDList" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttentKnow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttentNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ConsultNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DrID" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpertCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertGoodAt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertID" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpertMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertNicke" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpertPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertPicture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertProfile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertSex" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="ExpertTitle" nillable="true" type="xs:byte" />
+      <xs:element minOccurs="0" name="Invalid" type="xs:byte" />
+      <xs:element minOccurs="0" name="IsAllowAttent" type="xs:byte" />
+      <xs:element minOccurs="0" name="IsAllowConsult" type="xs:byte" />
+      <xs:element minOccurs="0" name="IsAllowNetDiagnose" type="xs:byte" />
+      <xs:element minOccurs="0" name="IsAllowRecommend" type="xs:byte" />
+      <xs:element minOccurs="0" name="IsAllowReserve" type="xs:byte" />
+      <xs:element minOccurs="0" name="IsAllowReserveAppend" type="xs:byte" />
+      <xs:element minOccurs="0" name="IsPublic" type="xs:byte" />
+      <xs:element minOccurs="0" name="NetDiagnoseNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="NetHospitalRegNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgID" type="xs:int" />
+      <xs:element minOccurs="0" name="OutPatientTimes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonalOrgID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Rvpackrecords" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WorkSaturation" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_Expertinfo" nillable="true" type="tns:M_Expertinfo" />
+</xs:schema>

@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{474F3C05-612F-4711-A9B4-9DC9C93962BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XYS.Remp.Screening</RootNamespace>
+    <AssemblyName>XYS.Remp.Screening</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>E:\SourceCode\saicha\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://172.18.100.38:3851/ct/</InstallUrl>
+    <MinimumRequiredVersion>1.0.0.291</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>293</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9A153CDE9AE7DF69B44296B349E9F0D6E2E719F0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>XYS.Remp.Screening_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Services\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\Services\ScreeningService.wsdl" />
+    <None Include="Service References\Services\ScreeningService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\ScreeningService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\ScreeningService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_CottageActivity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_CottageActivityRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_DoctorInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_HealthHouse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_Msg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_OrganizationInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_QuestionnaireResultDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_QuestionnaireUserDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\XYS.Remp.Screening.Services.M_User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\UserService.wsdl" />
+    <None Include="Service References\UserService\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_CategoryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_DemoAccount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_DepartmentInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_Doctorinfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_Expertinfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_ManageTree.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_MemberFeaturesItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_MemberFeaturesRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_MemberFeaturesType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_Netdiagnosephrase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_OrganizationInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_OrgIdAndDrId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_PatientAccount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_PatientExtendInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_PatientInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_PatientRelationInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_RegisterSmsLog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_SupplementPatientInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_XysDoctorOrg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.M_XysOrganization.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.PageOfM_DemoAccount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.PageOfM_Doctorinfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.PageOfM_Netdiagnosephrase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.PageOfM_PatientDemoAccountExt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.PageOfM_PatientInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\XYS.Remp.Screening.UserService.PageOfM_XysOrganization.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="XYS.Remp.Screening_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yyjs.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question4.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cube.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u271.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oxtui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+    <None Include="Resources\doctor.JPG" />
+    <None Include="Resources\btnNext.JPG" />
+    <None Include="Resources\titleBackground.JPG" />
+    <None Include="Resources\btnBack.JPG" />
+    <None Include="Resources\btnExit.JPG" />
+    <None Include="Resources\result.JPG" />
+    <None Include="Resources\title.jpg" />
+    <None Include="Resources\background2.jpg" />
+    <None Include="Resources\btnBefore.JPG" />
+    <None Include="Resources\301-2.png" />
+    <None Include="Resources\naocuzhongBack.png" />
+    <None Include="Resources\ball.jpg" />
+    <None Include="Resources\tree.JPG" />
+    <None Include="Resources\flag.JPG" />
+    <None Include="Resources\ankle_1.png" />
+    <None Include="Resources\ankle_2.png" />
+    <None Include="Resources\ankle_3.png" />
+    <None Include="Resources\ankle_4.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\btnDiabetes.png" />
+    <None Include="Resources\3-BMI.png" />
+    <None Include="Resources\4-yaowei.png" />
+    <None Include="Resources\5-shousuoya.png" />
+    <None Include="Resources\6-tangniaobing.png" />
+    <None Include="Resources\copd.png" />
+    <None Include="Resources\ipss3.png" />
+    <None Include="Resources\ipss4.png" />
+    <None Include="Resources\ipss11.png" />
+    <None Include="Resources\ipss12.png" />
+    <None Include="Resources\ipss13.png" />
+    <None Include="Resources\ipss7.png" />
+    <None Include="Resources\ipss8.png" />
+    <None Include="Resources\oab9.png" />
+    <None Include="Resources\oab4.png" />
+    <None Include="Resources\oab7.png" />
+    <None Include="Resources\oab8.png" />
+    <None Include="Resources\oab5.png" />
+    <None Include="Resources\oab6.png" />
+    <None Include="Resources\sex.png" />
+    <None Include="Resources\age.png" />
+    <None Include="Resources\ipss9.png" />
+    <None Include="Resources\ipss10.png" />
+    <None Include="Resources\ipss5.png" />
+    <None Include="Resources\ipss6.png" />
+    <None Include="Resources\Thah.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\10.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\21.png" />
+    <None Include="Resources\31.png" />
+    <None Include="Resources\41.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\22.png" />
+    <Content Include="Resources\btnDone.png" />
+    <Content Include="Resources\btn_screning.png" />
+    <Content Include="Resources\gd_gongshang.png" />
+    <Content Include="Resources\gd_gongshang_1.png" />
+    <Content Include="Resources\gd_gongshang_2.png" />
+    <Content Include="Resources\gd_gongshang_3.png" />
+    <Content Include="Resources\jizhu.png" />
+    <None Include="Resources\jizhu1.png" />
+    <None Include="Resources\jizhu2.PNG" />
+    <Content Include="Resources\lunyi.png" />
+    <None Include="Resources\lunyi1.png" />
+    <None Include="Resources\lunyi2.PNG" />
+    <None Include="Resources\shierrenmingyiyuan.PNG" />
+    <Content Include="Resources\shoushangzhi.PNG" />
+    <None Include="Resources\shoushangzhi1.PNG" />
+    <None Include="Resources\shoushangzhi2.PNG" />
+    <None Include="Resources\shoushangzhi21.PNG" />
+    <Content Include="Resources\Sound\AD\AD-8-2.m4a" />
+    <Content Include="Resources\Sound\AD\AD-9-2.m4a" />
+    <Content Include="Resources\Sound\AD\ad_1.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_2.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_3.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_4_1.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_4_2.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_4_3.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_5.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_6.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_7.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_8.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\AD\ad_9.m4a">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\speaker_64px.png" />
+    <None Include="Resources\speaker_64px_r1_c1.png" />
+    <None Include="Resources\speaker_white.PNG" />
+    <None Include="Resources\System.Net.Http.dll" />
+    <Content Include="Resources\sz_hospital.png" />
+    <Content Include="Resources\sz_hospital_1.png" />
+    <Content Include="Resources\sz_hospital_2.png" />
+    <Content Include="Resources\sz_hospital_3.png" />
+    <Content Include="Resources\sz_hospital_4.png" />
+    <Content Include="Resources\sz_hospital_5.png" />
+    <Content Include="Resources\sz_ncz.png" />
+    <Content Include="Resources\toubu.png" />
+    <None Include="Resources\toubu1.png" />
+    <Content Include="Resources\u29.png" />
+    <None Include="Resources\u36.png" />
+    <None Include="Resources\u37.png" />
+    <None Include="Resources\u38.png" />
+    <None Include="Resources\u40.png" />
+    <None Include="Resources\u41.png" />
+    <None Include="Resources\u39.jpg" />
+    <Content Include="Resources\u3901.png" />
+    <Content Include="Resources\zg_301.png" />
+    <None Include="Resources\zuhuai2.PNG" />
+    <Content Include="Resources\zuhuan.png" />
+    <None Include="Resources\zuhuan1.png" />
+    <None Include="Resources\{ABC8613C-708E-464F-91E2-ED8B2933F04D}.png" />
+    <None Include="Service References\Services\configuration91.svcinfo" />
+    <None Include="Service References\Services\configuration.svcinfo" />
+    <None Include="Service References\Services\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Services\ScreeningService.disco" />
+    <None Include="Service References\UserService\UserService.disco" />
+    <None Include="Service References\UserService\configuration91.svcinfo" />
+    <None Include="Service References\UserService\configuration.svcinfo" />
+    <None Include="Service References\UserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Services\" />
+    <WCFMetadataStorage Include="Service References\UserService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

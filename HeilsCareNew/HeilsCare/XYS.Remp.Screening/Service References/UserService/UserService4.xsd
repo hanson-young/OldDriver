@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/User.Model.DemoAccount" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/User.Model.DemoAccount" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfM_DemoAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_DemoAccount" nillable="true" type="tns:M_DemoAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_DemoAccount" nillable="true" type="tns:ArrayOfM_DemoAccount" />
+  <xs:complexType name="M_DemoAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DemoAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DemoAccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:byte" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientId" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_DemoAccount" nillable="true" type="tns:M_DemoAccount" />
+  <xs:complexType name="ArrayOfM_PatientDemoAccountExt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_PatientDemoAccountExt" nillable="true" type="tns:M_PatientDemoAccountExt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_PatientDemoAccountExt" nillable="true" type="tns:ArrayOfM_PatientDemoAccountExt" />
+  <xs:complexType name="M_PatientDemoAccountExt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_PatientDemoAccountExt" nillable="true" type="tns:M_PatientDemoAccountExt" />
+  <xs:complexType name="M_PatientDemoAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DemoAccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:byte" />
+      <xs:element minOccurs="0" name="PatientId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_PatientDemoAccount" nillable="true" type="tns:M_PatientDemoAccount" />
+</xs:schema>

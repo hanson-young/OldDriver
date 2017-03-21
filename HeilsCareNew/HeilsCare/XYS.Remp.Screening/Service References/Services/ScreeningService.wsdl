@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ScreeningService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.18.100.23:9614/ScreeningService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.18.100.23:9614/ScreeningService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.18.100.23:9614/ScreeningService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Screening.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IScreeningService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_AddQuestionUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddQuestionUser" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_AddQuestionUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddQuestionUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetQuestionnaireResultList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionnaireResultList" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetQuestionnaireResultList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionnaireResultListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_AddQuestionResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddQuestionResult" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_AddQuestionResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddQuestionResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateUserRecordStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserRecordStatus" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateUserRecordStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserRecordStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetSmsValidCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSmsValidCode" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetSmsValidCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSmsValidCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_CheckSmsValidCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSmsValidCode" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_CheckSmsValidCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSmsValidCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_Regist_InputMessage">
+    <wsdl:part name="parameters" element="tns:Regist" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_Regist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetUserInfoByCardNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByCardNo" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetUserInfoByCardNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByCardNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetUserInfoByAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByAccount" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetUserInfoByAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateQuestionnaireResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionnaireResult" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateQuestionnaireResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionnaireResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetOrganizationByOrgCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByOrgCode" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetOrganizationByOrgCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByOrgCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetOrganizationInfoByParentOrgID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationInfoByParentOrgID" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetOrganizationInfoByParentOrgID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationInfoByParentOrgIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetCottageActivityListByOrgId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCottageActivityListByOrgId" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetCottageActivityListByOrgId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCottageActivityListByOrgIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetDoctorInfoByAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorInfoByAccount" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetDoctorInfoByAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorInfoByAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetHouseListForHouseApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouseListForHouseApp" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetHouseListForHouseApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHouseListForHouseAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_AddPatientToCottageActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPatientToCottageActivity" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_AddPatientToCottageActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPatientToCottageActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateMemberAllRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMemberAllRecords" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateMemberAllRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMemberAllRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetCottageActivityByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCottageActivityByName" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetCottageActivityByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCottageActivityByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetHealthHouseByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHealthHouseByName" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetHealthHouseByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHealthHouseByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateQuestionUserScoreStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionUserScoreStatus" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateQuestionUserScoreStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionUserScoreStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetQuestionnaireUserDetailsByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionnaireUserDetailsByCode" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetQuestionnaireUserDetailsByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionnaireUserDetailsByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetQuestionnaireResultDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionnaireResultDetails" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetQuestionnaireResultDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionnaireResultDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateQuestionUserScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionUserScore" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateQuestionUserScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionUserScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetQuestionnaireListByTypeAndCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionnaireListByTypeAndCode" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetQuestionnaireListByTypeAndCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionnaireListByTypeAndCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateQuestionnaireResultWeightScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionnaireResultWeightScore" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateQuestionnaireResultWeightScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionnaireResultWeightScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateCottageActivityTypeTo1_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCottageActivityTypeTo1" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateCottageActivityTypeTo1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCottageActivityTypeTo1Response" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetRecordByParm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordByParm" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetRecordByParm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordByParmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetRecordByRelationtId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordByRelationtId" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetRecordByRelationtId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordByRelationtIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateCottageActivityRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCottageActivityRecord" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_UpdateCottageActivityRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCottageActivityRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetMCottageActivityById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMCottageActivityById" />
+  </wsdl:message>
+  <wsdl:message name="IScreeningService_GetMCottageActivityById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMCottageActivityByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IScreeningService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/Login" message="tns:IScreeningService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/LoginResponse" message="tns:IScreeningService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuestionUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/AddQuestionUser" message="tns:IScreeningService_AddQuestionUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/AddQuestionUserResponse" message="tns:IScreeningService_AddQuestionUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionnaireResultList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetQuestionnaireResultList" message="tns:IScreeningService_GetQuestionnaireResultList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetQuestionnaireResultListResponse" message="tns:IScreeningService_GetQuestionnaireResultList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuestionResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/AddQuestionResult" message="tns:IScreeningService_AddQuestionResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/AddQuestionResultResponse" message="tns:IScreeningService_AddQuestionResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRecordStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/UpdateUserRecordStatus" message="tns:IScreeningService_UpdateUserRecordStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/UpdateUserRecordStatusResponse" message="tns:IScreeningService_UpdateUserRecordStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSmsValidCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetSmsValidCode" message="tns:IScreeningService_GetSmsValidCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetSmsValidCodeResponse" message="tns:IScreeningService_GetSmsValidCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSmsValidCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/CheckSmsValidCode" message="tns:IScreeningService_CheckSmsValidCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/CheckSmsValidCodeResponse" message="tns:IScreeningService_CheckSmsValidCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Regist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/Regist" message="tns:IScreeningService_Regist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/RegistResponse" message="tns:IScreeningService_Regist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetUserInfo" message="tns:IScreeningService_GetUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetUserInfoResponse" message="tns:IScreeningService_GetUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByCardNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetUserInfoByCardNo" message="tns:IScreeningService_GetUserInfoByCardNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetUserInfoByCardNoResponse" message="tns:IScreeningService_GetUserInfoByCardNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetUserInfoByAccount" message="tns:IScreeningService_GetUserInfoByAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetUserInfoByAccountResponse" message="tns:IScreeningService_GetUserInfoByAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestionnaireResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/UpdateQuestionnaireResult" message="tns:IScreeningService_UpdateQuestionnaireResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/UpdateQuestionnaireResultResponse" message="tns:IScreeningService_UpdateQuestionnaireResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByOrgCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetOrganizationByOrgCode" message="tns:IScreeningService_GetOrganizationByOrgCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetOrganizationByOrgCodeResponse" message="tns:IScreeningService_GetOrganizationByOrgCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationInfoByParentOrgID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetOrganizationInfoByParentOrgID" message="tns:IScreeningService_GetOrganizationInfoByParentOrgID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetOrganizationInfoByParentOrgIDResponse" message="tns:IScreeningService_GetOrganizationInfoByParentOrgID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCottageActivityListByOrgId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetCottageActivityListByOrgId" message="tns:IScreeningService_GetCottageActivityListByOrgId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetCottageActivityListByOrgIdResponse" message="tns:IScreeningService_GetCottageActivityListByOrgId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorInfoByAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetDoctorInfoByAccount" message="tns:IScreeningService_GetDoctorInfoByAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetDoctorInfoByAccountResponse" message="tns:IScreeningService_GetDoctorInfoByAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHouseListForHouseApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetHouseListForHouseApp" message="tns:IScreeningService_GetHouseListForHouseApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetHouseListForHouseAppResponse" message="tns:IScreeningService_GetHouseListForHouseApp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientToCottageActivity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/AddPatientToCottageActivity" message="tns:IScreeningService_AddPatientToCottageActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/AddPatientToCottageActivityResponse" message="tns:IScreeningService_AddPatientToCottageActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberAllRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/UpdateMemberAllRecords" message="tns:IScreeningService_UpdateMemberAllRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/UpdateMemberAllRecordsResponse" message="tns:IScreeningService_UpdateMemberAllRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCottageActivityByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetCottageActivityByName" message="tns:IScreeningService_GetCottageActivityByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetCottageActivityByNameResponse" message="tns:IScreeningService_GetCottageActivityByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthHouseByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetHealthHouseByName" message="tns:IScreeningService_GetHealthHouseByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetHealthHouseByNameResponse" message="tns:IScreeningService_GetHealthHouseByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestionUserScoreStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/UpdateQuestionUserScoreStatus" message="tns:IScreeningService_UpdateQuestionUserScoreStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/UpdateQuestionUserScoreStatusResponse" message="tns:IScreeningService_UpdateQuestionUserScoreStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionnaireUserDetailsByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetQuestionnaireUserDetailsByCode" message="tns:IScreeningService_GetQuestionnaireUserDetailsByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetQuestionnaireUserDetailsByCodeResponse" message="tns:IScreeningService_GetQuestionnaireUserDetailsByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionnaireResultDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetQuestionnaireResultDetails" message="tns:IScreeningService_GetQuestionnaireResultDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetQuestionnaireResultDetailsResponse" message="tns:IScreeningService_GetQuestionnaireResultDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestionUserScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/UpdateQuestionUserScore" message="tns:IScreeningService_UpdateQuestionUserScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/UpdateQuestionUserScoreResponse" message="tns:IScreeningService_UpdateQuestionUserScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionnaireListByTypeAndCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetQuestionnaireListByTypeAndCode" message="tns:IScreeningService_GetQuestionnaireListByTypeAndCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetQuestionnaireListByTypeAndCodeResponse" message="tns:IScreeningService_GetQuestionnaireListByTypeAndCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestionnaireResultWeightScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/UpdateQuestionnaireResultWeightScore" message="tns:IScreeningService_UpdateQuestionnaireResultWeightScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/UpdateQuestionnaireResultWeightScoreResponse" message="tns:IScreeningService_UpdateQuestionnaireResultWeightScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCottageActivityTypeTo1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/UpdateCottageActivityTypeTo1" message="tns:IScreeningService_UpdateCottageActivityTypeTo1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/UpdateCottageActivityTypeTo1Response" message="tns:IScreeningService_UpdateCottageActivityTypeTo1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByParm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetRecordByParm" message="tns:IScreeningService_GetRecordByParm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetRecordByParmResponse" message="tns:IScreeningService_GetRecordByParm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByRelationtId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetRecordByRelationtId" message="tns:IScreeningService_GetRecordByRelationtId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetRecordByRelationtIdResponse" message="tns:IScreeningService_GetRecordByRelationtId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCottageActivityRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/UpdateCottageActivityRecord" message="tns:IScreeningService_UpdateCottageActivityRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/UpdateCottageActivityRecordResponse" message="tns:IScreeningService_UpdateCottageActivityRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMCottageActivityById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScreeningService/GetMCottageActivityById" message="tns:IScreeningService_GetMCottageActivityById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScreeningService/GetMCottageActivityByIdResponse" message="tns:IScreeningService_GetMCottageActivityById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IScreeningService" type="tns:IScreeningService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuestionUser">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/AddQuestionUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionnaireResultList">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetQuestionnaireResultList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuestionResult">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/AddQuestionResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRecordStatus">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/UpdateUserRecordStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSmsValidCode">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetSmsValidCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSmsValidCode">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/CheckSmsValidCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Regist">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/Regist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByCardNo">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetUserInfoByCardNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByAccount">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetUserInfoByAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestionnaireResult">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/UpdateQuestionnaireResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByOrgCode">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetOrganizationByOrgCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationInfoByParentOrgID">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetOrganizationInfoByParentOrgID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCottageActivityListByOrgId">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetCottageActivityListByOrgId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorInfoByAccount">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetDoctorInfoByAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHouseListForHouseApp">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetHouseListForHouseApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPatientToCottageActivity">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/AddPatientToCottageActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberAllRecords">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/UpdateMemberAllRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCottageActivityByName">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetCottageActivityByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHealthHouseByName">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetHealthHouseByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestionUserScoreStatus">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/UpdateQuestionUserScoreStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionnaireUserDetailsByCode">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetQuestionnaireUserDetailsByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionnaireResultDetails">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetQuestionnaireResultDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestionUserScore">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/UpdateQuestionUserScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionnaireListByTypeAndCode">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetQuestionnaireListByTypeAndCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestionnaireResultWeightScore">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/UpdateQuestionnaireResultWeightScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCottageActivityTypeTo1">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/UpdateCottageActivityTypeTo1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByParm">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetRecordByParm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByRelationtId">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetRecordByRelationtId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCottageActivityRecord">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/UpdateCottageActivityRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMCottageActivityById">
+      <soap:operation soapAction="http://tempuri.org/IScreeningService/GetMCottageActivityById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ScreeningService">
+    <wsdl:port name="BasicHttpBinding_IScreeningService" binding="tns:BasicHttpBinding_IScreeningService">
+      <soap:address location="http://172.18.100.23:9614/ScreeningService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

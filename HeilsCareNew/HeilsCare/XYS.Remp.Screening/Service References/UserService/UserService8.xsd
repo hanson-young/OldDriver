@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/User.Common.Page" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/User.Common.Page" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/User.Model.DemoAccount" />
+  <xs:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/User.Model.Doctorinfo" />
+  <xs:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/User.Model.OrganizationManage" />
+  <xs:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/User.Model.Patient" />
+  <xs:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/User.Model.Specialist" />
+  <xs:complexType name="PageOf_x003C_M_DemoAccount_x003E_">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageOf&lt;{0}&gt;" Namespace="http://schemas.datacontract.org/2004/07/User.Common.Page" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="M_DemoAccount" Namespace="http://schemas.datacontract.org/2004/07/User.Model.DemoAccount" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/User.Model.DemoAccount" minOccurs="0" name="PageOfResults" nillable="true" type="q1:ArrayOfM_DemoAccount" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageOf_x003C_M_DemoAccount_x003E_" nillable="true" type="tns:PageOf_x003C_M_DemoAccount_x003E_" />
+  <xs:complexType name="PageOf_x003C_M_PatientDemoAccountExt_x003E_">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageOf&lt;{0}&gt;" Namespace="http://schemas.datacontract.org/2004/07/User.Common.Page" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="M_PatientDemoAccountExt" Namespace="http://schemas.datacontract.org/2004/07/User.Model.DemoAccount" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/User.Model.DemoAccount" minOccurs="0" name="PageOfResults" nillable="true" type="q2:ArrayOfM_PatientDemoAccountExt" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageOf_x003C_M_PatientDemoAccountExt_x003E_" nillable="true" type="tns:PageOf_x003C_M_PatientDemoAccountExt_x003E_" />
+  <xs:complexType name="PageOf_x003C_M_Doctorinfo_x003E_">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageOf&lt;{0}&gt;" Namespace="http://schemas.datacontract.org/2004/07/User.Common.Page" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="M_Doctorinfo" Namespace="http://schemas.datacontract.org/2004/07/User.Model.Doctorinfo" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/User.Model.Doctorinfo" minOccurs="0" name="PageOfResults" nillable="true" type="q3:ArrayOfM_Doctorinfo" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageOf_x003C_M_Doctorinfo_x003E_" nillable="true" type="tns:PageOf_x003C_M_Doctorinfo_x003E_" />
+  <xs:complexType name="PageOf_x003C_M_XysOrganization_x003E_">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageOf&lt;{0}&gt;" Namespace="http://schemas.datacontract.org/2004/07/User.Common.Page" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="M_XysOrganization" Namespace="http://schemas.datacontract.org/2004/07/User.Model.OrganizationManage" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/User.Model.OrganizationManage" minOccurs="0" name="PageOfResults" nillable="true" type="q4:ArrayOfM_XysOrganization" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageOf_x003C_M_XysOrganization_x003E_" nillable="true" type="tns:PageOf_x003C_M_XysOrganization_x003E_" />
+  <xs:complexType name="PageOf_x003C_M_PatientInfo_x003E_">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageOf&lt;{0}&gt;" Namespace="http://schemas.datacontract.org/2004/07/User.Common.Page" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="M_PatientInfo" Namespace="http://schemas.datacontract.org/2004/07/User.Model.Patient" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/User.Model.Patient" minOccurs="0" name="PageOfResults" nillable="true" type="q5:ArrayOfM_PatientInfo" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageOf_x003C_M_PatientInfo_x003E_" nillable="true" type="tns:PageOf_x003C_M_PatientInfo_x003E_" />
+  <xs:complexType name="PageOf_x003C_M_Netdiagnosephrase_x003E_">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageOf&lt;{0}&gt;" Namespace="http://schemas.datacontract.org/2004/07/User.Common.Page" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="M_Netdiagnosephrase" Namespace="http://schemas.datacontract.org/2004/07/User.Model.Specialist" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/User.Model.Specialist" minOccurs="0" name="PageOfResults" nillable="true" type="q6:ArrayOfM_Netdiagnosephrase" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageOf_x003C_M_Netdiagnosephrase_x003E_" nillable="true" type="tns:PageOf_x003C_M_Netdiagnosephrase_x003E_" />
+</xs:schema>

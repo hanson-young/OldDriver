@@ -1,0 +1,1892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/User.Common.Page" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/User.Model.DemoAccount" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/User.Model.Departmentinfo" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/User.Model.Doctorinfo" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/User.Model.OrganizationManage" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/User.Model.Patient" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/User.Model.Api" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/User.Model.Patient.Query" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/User.Model.MemberFeatures" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/User.Model.OrganizationInfo" />
+      <xsd:import schemaLocation="http://172.18.100.23:9600/UserService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/User.Model.Specialist" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDemoAccountService_GetDemoAccountList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDemoAccountList" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_GetDemoAccountList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDemoAccountListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_GetDemoAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDemoAccount" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_GetDemoAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDemoAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_GetDemoAccountByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDemoAccountByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_GetDemoAccountByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDemoAccountByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_SaveDemoAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDemoAccount" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_SaveDemoAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDemoAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_RmoveDemoAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:RmoveDemoAccount" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_RmoveDemoAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RmoveDemoAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_GetPatientDemoAccountList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDemoAccountList" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_GetPatientDemoAccountList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDemoAccountListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_AddDemoAccountRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDemoAccountRelation" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_AddDemoAccountRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDemoAccountRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_RemoveDemoAccountRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDemoAccountRelation" />
+  </wsdl:message>
+  <wsdl:message name="IDemoAccountService_RemoveDemoAccountRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDemoAccountRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartmentinfoService_DelDepartRelateByExpertID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDepartRelateByExpertID" />
+  </wsdl:message>
+  <wsdl:message name="IDepartmentinfoService_DelDepartRelateByExpertID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDepartRelateByExpertIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartmentinfoService_AddExpertToDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpertToDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IDepartmentinfoService_AddExpertToDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpertToDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_GetDoctorinfoByDrID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorinfoByDrID" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_GetDoctorinfoByDrID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorinfoByDrIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_UpdateDoctorinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDoctorinfo" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_UpdateDoctorinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDoctorinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_UpdateSingleDoctorinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSingleDoctorinfo" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_UpdateSingleDoctorinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSingleDoctorinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_GetDoctorinfoByDrIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorinfoByDrIDs" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_GetDoctorinfoByDrIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorinfoByDrIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_GetDoctorListByCondition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorListByCondition" />
+  </wsdl:message>
+  <wsdl:message name="IDoctorinfoService_GetDoctorListByCondition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorListByConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_IManageTreeService_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:IManageTreeService_Get" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_IManageTreeService_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IManageTreeService_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_GetChildNodesById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildNodesById" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_GetChildNodesById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildNodesByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_IManageTreeService_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:IManageTreeService_Add" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_IManageTreeService_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IManageTreeService_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_IManageTreeService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:IManageTreeService_Update" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_IManageTreeService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IManageTreeService_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_IManageTreeService_Remove_InputMessage">
+    <wsdl:part name="parameters" element="tns:IManageTreeService_Remove" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_IManageTreeService_Remove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IManageTreeService_RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_MoveOrgToOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveOrgToOrg" />
+  </wsdl:message>
+  <wsdl:message name="IManageTreeService_MoveOrgToOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveOrgToOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_GetXysDoctorOrgListByDoctorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXysDoctorOrgListByDoctorId" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_GetXysDoctorOrgListByDoctorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXysDoctorOrgListByDoctorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_GetOrgIdsAndDrIdsByDrIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgIdsAndDrIdsByDrIds" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_GetOrgIdsAndDrIdsByDrIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgIdsAndDrIdsByDrIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_AddXysDoctorOrgByList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddXysDoctorOrgByList" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_AddXysDoctorOrgByList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddXysDoctorOrgByListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_DeleteXysDoctorOrgByDrId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteXysDoctorOrgByDrId" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_DeleteXysDoctorOrgByDrId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteXysDoctorOrgByDrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_UpDateXysDoctorOrgIsDeleteByDrId_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpDateXysDoctorOrgIsDeleteByDrId" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_UpDateXysDoctorOrgIsDeleteByDrId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpDateXysDoctorOrgIsDeleteByDrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_DeleteXysDoctorOrgByIsDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteXysDoctorOrgByIsDelete" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_DeleteXysDoctorOrgByIsDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteXysDoctorOrgByIsDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_RefreshXysDoctorOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshXysDoctorOrg" />
+  </wsdl:message>
+  <wsdl:message name="IXysDoctorOrgService_RefreshXysDoctorOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshXysDoctorOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetListByOrgId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListByOrgId" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetListByOrgId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListByOrgIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetDoctorTreeRelationIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorTreeRelationIds" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetDoctorTreeRelationIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorTreeRelationIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_IXysOrganizationService_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:IXysOrganizationService_Add" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_IXysOrganizationService_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IXysOrganizationService_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_IXysOrganizationService_Remove_InputMessage">
+    <wsdl:part name="parameters" element="tns:IXysOrganizationService_Remove" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_IXysOrganizationService_Remove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IXysOrganizationService_RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetMXysOrganizationByDrId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMXysOrganizationByDrId" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetMXysOrganizationByDrId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMXysOrganizationByDrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetDrIdByTreeLeaf_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrIdByTreeLeaf" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetDrIdByTreeLeaf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrIdByTreeLeafResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetDrIdByTree_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrIdByTree" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetDrIdByTree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrIdByTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_MoveMemberToOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveMemberToOrg" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_MoveMemberToOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveMemberToOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetXysOrganizationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXysOrganizationById" />
+  </wsdl:message>
+  <wsdl:message name="IXysOrganizationService_GetXysOrganizationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXysOrganizationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CreatePatientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CreatePatientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientInfoById" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CheckPatientAccountExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPatientAccountExist" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CheckPatientAccountExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPatientAccountExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_AddResisterSmsLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResisterSmsLog" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_AddResisterSmsLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResisterSmsLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetVerificaton_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVerificaton" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetVerificaton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVerificatonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CheckMobileExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMobileExist" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CheckMobileExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMobileExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientInfoByMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientInfoByMobile" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientInfoByMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientInfoByMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_SetVerificationDisable_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetVerificationDisable" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_SetVerificationDisable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetVerificationDisableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientInfoById" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientAccountByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientAccountByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientAccountByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientAccountByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientByOrgIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientByOrgIds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientByOrgIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientByOrgIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_InsertPatientInfoBySpecialist_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPatientInfoBySpecialist" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_InsertPatientInfoBySpecialist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPatientInfoBySpecialistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesRecordsByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesRecordsByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesRecordsByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesRecordsByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_InsertFeaturesRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFeaturesRecord" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_InsertFeaturesRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFeaturesRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_DelFeaturesRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFeaturesRecord" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_DelFeaturesRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFeaturesRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_InsertFeaturesLogBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFeaturesLogBatch" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_InsertFeaturesLogBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFeaturesLogBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_InsertFeaturesLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFeaturesLog" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_InsertFeaturesLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFeaturesLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesTypeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesTypeList" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesTypeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesItemByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesItemByType" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesItemByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesItemByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientInfoBySpecialist_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientInfoBySpecialist" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientInfoBySpecialist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientInfoBySpecialistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientByMobileAndName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientByMobileAndName" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientByMobileAndName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientByMobileAndNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesItemByIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesItemByIds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesItemByIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesItemByIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientInfoByIdForSpecialist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientInfoByIdForSpecialist" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientInfoByIdForSpecialist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientInfoByIdForSpecialistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetOrgInfoByIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgInfoByIds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetOrgInfoByIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgInfoByIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesRecordByPatientIdAndItemId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesRecordByPatientIdAndItemId" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesRecordByPatientIdAndItemId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesRecordByPatientIdAndItemIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesRecordsByPatientIdAndItemIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesRecordsByPatientIdAndItemIds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetFeaturesRecordsByPatientIdAndItemIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturesRecordsByPatientIdAndItemIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_DelFeaturesRecordByPatientIdAndItemIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFeaturesRecordByPatientIdAndItemIds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_DelFeaturesRecordByPatientIdAndItemIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFeaturesRecordByPatientIdAndItemIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientAccountByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientAccountByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientAccountByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientAccountByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientById_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientById" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CreatePatientRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientRelation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CreatePatientRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientRelation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_DeletePatientRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatientRelation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_DeletePatientRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatientRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetAllPatientRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientRelation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetAllPatientRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientRelationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientRelationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientRelationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientRelationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientRelationEducation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientRelationEducation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientRelationEducation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientRelationEducationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientRelationCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientRelationCount" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientRelationCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientRelationCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CreateSupplementPatientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSupplementPatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CreateSupplementPatientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSupplementPatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdateSupplementPatientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSupplementPatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdateSupplementPatientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSupplementPatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetSupplementPatientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplementPatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetSupplementPatientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplementPatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetSupplementPatientInfoByRelationID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplementPatientInfoByRelationID" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetSupplementPatientInfoByRelationID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupplementPatientInfoByRelationIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CheckPatientRelNameIsExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPatientRelNameIsExists" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_CheckPatientRelNameIsExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPatientRelNameIsExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientEducationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientEducationById" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_UpdatePatientEducationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientEducationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_DeleteSupplementPatientInfoBySInfoId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplementPatientInfoBySInfoId" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_DeleteSupplementPatientInfoBySInfoId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplementPatientInfoBySInfoIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientAndRelationInfoByMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientAndRelationInfoByMobile" />
+  </wsdl:message>
+  <wsdl:message name="IPatientService_GetPatientAndRelationInfoByMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientAndRelationInfoByMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_CreateNetdiagnosephrase_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNetdiagnosephrase" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_CreateNetdiagnosephrase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNetdiagnosephraseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_DeleteNetdiagnosephraseById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNetdiagnosephraseById" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_DeleteNetdiagnosephraseById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNetdiagnosephraseByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_LogicDeleteNetdiagnosephrase_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogicDeleteNetdiagnosephrase" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_LogicDeleteNetdiagnosephrase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogicDeleteNetdiagnosephraseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_UpdateNetdiagnosephrase_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNetdiagnosephrase" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_UpdateNetdiagnosephrase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNetdiagnosephraseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetNetdiagnosephraseByDrId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetdiagnosephraseByDrId" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetNetdiagnosephraseByDrId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetdiagnosephraseByDrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetNetdiagnosephraseByContentAndCreateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetdiagnosephraseByContentAndCreateTime" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetNetdiagnosephraseByContentAndCreateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetdiagnosephraseByContentAndCreateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetNetdiagnosephraseById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetdiagnosephraseById" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetNetdiagnosephraseById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetdiagnosephraseByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetNetdiagnosephraseList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetdiagnosephraseList" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetNetdiagnosephraseList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetdiagnosephraseListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetItemsByCategoryId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemsByCategoryId" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetItemsByCategoryId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemsByCategoryIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetItemNamesByItemValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemNamesByItemValue" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetItemNamesByItemValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemNamesByItemValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetAllDepartmentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDepartmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetAllDepartmentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDepartmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetExpertToDepartmentByExpertId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpertToDepartmentByExpertId" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetExpertToDepartmentByExpertId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpertToDepartmentByExpertIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetExpertPartInfoByDrId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpertPartInfoByDrId" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_GetExpertPartInfoByDrId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpertPartInfoByDrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_UpdateSingleExpert_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSingleExpert" />
+  </wsdl:message>
+  <wsdl:message name="ISpecialistService_UpdateSingleExpert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSingleExpertResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDemoAccountService">
+    <wsdl:operation name="GetDemoAccountList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDemoAccountService/GetDemoAccountList" message="tns:IDemoAccountService_GetDemoAccountList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDemoAccountService/GetDemoAccountListResponse" message="tns:IDemoAccountService_GetDemoAccountList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDemoAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDemoAccountService/GetDemoAccount" message="tns:IDemoAccountService_GetDemoAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDemoAccountService/GetDemoAccountResponse" message="tns:IDemoAccountService_GetDemoAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDemoAccountByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDemoAccountService/GetDemoAccountByPatientId" message="tns:IDemoAccountService_GetDemoAccountByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDemoAccountService/GetDemoAccountByPatientIdResponse" message="tns:IDemoAccountService_GetDemoAccountByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDemoAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDemoAccountService/SaveDemoAccount" message="tns:IDemoAccountService_SaveDemoAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDemoAccountService/SaveDemoAccountResponse" message="tns:IDemoAccountService_SaveDemoAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RmoveDemoAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDemoAccountService/RmoveDemoAccount" message="tns:IDemoAccountService_RmoveDemoAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDemoAccountService/RmoveDemoAccountResponse" message="tns:IDemoAccountService_RmoveDemoAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDemoAccountList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDemoAccountService/GetPatientDemoAccountList" message="tns:IDemoAccountService_GetPatientDemoAccountList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDemoAccountService/GetPatientDemoAccountListResponse" message="tns:IDemoAccountService_GetPatientDemoAccountList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDemoAccountRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDemoAccountService/AddDemoAccountRelation" message="tns:IDemoAccountService_AddDemoAccountRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDemoAccountService/AddDemoAccountRelationResponse" message="tns:IDemoAccountService_AddDemoAccountRelation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDemoAccountRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDemoAccountService/RemoveDemoAccountRelation" message="tns:IDemoAccountService_RemoveDemoAccountRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDemoAccountService/RemoveDemoAccountRelationResponse" message="tns:IDemoAccountService_RemoveDemoAccountRelation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDepartmentinfoService">
+    <wsdl:operation name="DelDepartRelateByExpertID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartmentinfoService/DelDepartRelateByExpertID" message="tns:IDepartmentinfoService_DelDepartRelateByExpertID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartmentinfoService/DelDepartRelateByExpertIDResponse" message="tns:IDepartmentinfoService_DelDepartRelateByExpertID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExpertToDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartmentinfoService/AddExpertToDepartment" message="tns:IDepartmentinfoService_AddExpertToDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartmentinfoService/AddExpertToDepartmentResponse" message="tns:IDepartmentinfoService_AddExpertToDepartment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDoctorinfoService">
+    <wsdl:operation name="GetDoctorinfoByDrID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorinfoService/GetDoctorinfoByDrID" message="tns:IDoctorinfoService_GetDoctorinfoByDrID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorinfoService/GetDoctorinfoByDrIDResponse" message="tns:IDoctorinfoService_GetDoctorinfoByDrID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDoctorinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorinfoService/UpdateDoctorinfo" message="tns:IDoctorinfoService_UpdateDoctorinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorinfoService/UpdateDoctorinfoResponse" message="tns:IDoctorinfoService_UpdateDoctorinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleDoctorinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorinfoService/UpdateSingleDoctorinfo" message="tns:IDoctorinfoService_UpdateSingleDoctorinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorinfoService/UpdateSingleDoctorinfoResponse" message="tns:IDoctorinfoService_UpdateSingleDoctorinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorinfoByDrIDs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorinfoService/GetDoctorinfoByDrIDs" message="tns:IDoctorinfoService_GetDoctorinfoByDrIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorinfoService/GetDoctorinfoByDrIDsResponse" message="tns:IDoctorinfoService_GetDoctorinfoByDrIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorListByCondition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDoctorinfoService/GetDoctorListByCondition" message="tns:IDoctorinfoService_GetDoctorListByCondition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDoctorinfoService/GetDoctorListByConditionResponse" message="tns:IDoctorinfoService_GetDoctorListByCondition_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IManageTreeService">
+    <wsdl:operation name="IManageTreeService_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageTreeService/IManageTreeService_Get" message="tns:IManageTreeService_IManageTreeService_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageTreeService/IManageTreeService_GetResponse" message="tns:IManageTreeService_IManageTreeService_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildNodesById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageTreeService/GetChildNodesById" message="tns:IManageTreeService_GetChildNodesById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageTreeService/GetChildNodesByIdResponse" message="tns:IManageTreeService_GetChildNodesById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IManageTreeService_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageTreeService/IManageTreeService_Add" message="tns:IManageTreeService_IManageTreeService_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageTreeService/IManageTreeService_AddResponse" message="tns:IManageTreeService_IManageTreeService_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IManageTreeService_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageTreeService/IManageTreeService_Update" message="tns:IManageTreeService_IManageTreeService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageTreeService/IManageTreeService_UpdateResponse" message="tns:IManageTreeService_IManageTreeService_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IManageTreeService_Remove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageTreeService/IManageTreeService_Remove" message="tns:IManageTreeService_IManageTreeService_Remove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageTreeService/IManageTreeService_RemoveResponse" message="tns:IManageTreeService_IManageTreeService_Remove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveOrgToOrg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManageTreeService/MoveOrgToOrg" message="tns:IManageTreeService_MoveOrgToOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManageTreeService/MoveOrgToOrgResponse" message="tns:IManageTreeService_MoveOrgToOrg_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IXysDoctorOrgService">
+    <wsdl:operation name="GetXysDoctorOrgListByDoctorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysDoctorOrgService/GetXysDoctorOrgListByDoctorId" message="tns:IXysDoctorOrgService_GetXysDoctorOrgListByDoctorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysDoctorOrgService/GetXysDoctorOrgListByDoctorIdResponse" message="tns:IXysDoctorOrgService_GetXysDoctorOrgListByDoctorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgIdsAndDrIdsByDrIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysDoctorOrgService/GetOrgIdsAndDrIdsByDrIds" message="tns:IXysDoctorOrgService_GetOrgIdsAndDrIdsByDrIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysDoctorOrgService/GetOrgIdsAndDrIdsByDrIdsResponse" message="tns:IXysDoctorOrgService_GetOrgIdsAndDrIdsByDrIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddXysDoctorOrgByList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysDoctorOrgService/AddXysDoctorOrgByList" message="tns:IXysDoctorOrgService_AddXysDoctorOrgByList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysDoctorOrgService/AddXysDoctorOrgByListResponse" message="tns:IXysDoctorOrgService_AddXysDoctorOrgByList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteXysDoctorOrgByDrId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysDoctorOrgService/DeleteXysDoctorOrgByDrId" message="tns:IXysDoctorOrgService_DeleteXysDoctorOrgByDrId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysDoctorOrgService/DeleteXysDoctorOrgByDrIdResponse" message="tns:IXysDoctorOrgService_DeleteXysDoctorOrgByDrId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpDateXysDoctorOrgIsDeleteByDrId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysDoctorOrgService/UpDateXysDoctorOrgIsDeleteByDrId" message="tns:IXysDoctorOrgService_UpDateXysDoctorOrgIsDeleteByDrId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysDoctorOrgService/UpDateXysDoctorOrgIsDeleteByDrIdResponse" message="tns:IXysDoctorOrgService_UpDateXysDoctorOrgIsDeleteByDrId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteXysDoctorOrgByIsDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysDoctorOrgService/DeleteXysDoctorOrgByIsDelete" message="tns:IXysDoctorOrgService_DeleteXysDoctorOrgByIsDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysDoctorOrgService/DeleteXysDoctorOrgByIsDeleteResponse" message="tns:IXysDoctorOrgService_DeleteXysDoctorOrgByIsDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshXysDoctorOrg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysDoctorOrgService/RefreshXysDoctorOrg" message="tns:IXysDoctorOrgService_RefreshXysDoctorOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysDoctorOrgService/RefreshXysDoctorOrgResponse" message="tns:IXysDoctorOrgService_RefreshXysDoctorOrg_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IXysOrganizationService">
+    <wsdl:operation name="GetListByOrgId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/GetListByOrgId" message="tns:IXysOrganizationService_GetListByOrgId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/GetListByOrgIdResponse" message="tns:IXysOrganizationService_GetListByOrgId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorTreeRelationIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/GetDoctorTreeRelationIds" message="tns:IXysOrganizationService_GetDoctorTreeRelationIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/GetDoctorTreeRelationIdsResponse" message="tns:IXysOrganizationService_GetDoctorTreeRelationIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IXysOrganizationService_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/IXysOrganizationService_Add" message="tns:IXysOrganizationService_IXysOrganizationService_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/IXysOrganizationService_AddResponse" message="tns:IXysOrganizationService_IXysOrganizationService_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IXysOrganizationService_Remove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/IXysOrganizationService_Remove" message="tns:IXysOrganizationService_IXysOrganizationService_Remove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/IXysOrganizationService_RemoveResponse" message="tns:IXysOrganizationService_IXysOrganizationService_Remove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMXysOrganizationByDrId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/GetMXysOrganizationByDrId" message="tns:IXysOrganizationService_GetMXysOrganizationByDrId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/GetMXysOrganizationByDrIdResponse" message="tns:IXysOrganizationService_GetMXysOrganizationByDrId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrIdByTreeLeaf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/GetDrIdByTreeLeaf" message="tns:IXysOrganizationService_GetDrIdByTreeLeaf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/GetDrIdByTreeLeafResponse" message="tns:IXysOrganizationService_GetDrIdByTreeLeaf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrIdByTree">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/GetDrIdByTree" message="tns:IXysOrganizationService_GetDrIdByTree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/GetDrIdByTreeResponse" message="tns:IXysOrganizationService_GetDrIdByTree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveMemberToOrg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/MoveMemberToOrg" message="tns:IXysOrganizationService_MoveMemberToOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/MoveMemberToOrgResponse" message="tns:IXysOrganizationService_MoveMemberToOrg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXysOrganizationById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IXysOrganizationService/GetXysOrganizationById" message="tns:IXysOrganizationService_GetXysOrganizationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IXysOrganizationService/GetXysOrganizationByIdResponse" message="tns:IXysOrganizationService_GetXysOrganizationById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPatientService">
+    <wsdl:operation name="CreatePatientInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/CreatePatientInfo" message="tns:IPatientService_CreatePatientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/CreatePatientInfoResponse" message="tns:IPatientService_CreatePatientInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientInfoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientInfoById" message="tns:IPatientService_UpdatePatientInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientInfoByIdResponse" message="tns:IPatientService_UpdatePatientInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPatientAccountExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/CheckPatientAccountExist" message="tns:IPatientService_CheckPatientAccountExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/CheckPatientAccountExistResponse" message="tns:IPatientService_CheckPatientAccountExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResisterSmsLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/AddResisterSmsLog" message="tns:IPatientService_AddResisterSmsLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/AddResisterSmsLogResponse" message="tns:IPatientService_AddResisterSmsLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerificaton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetVerificaton" message="tns:IPatientService_GetVerificaton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetVerificatonResponse" message="tns:IPatientService_GetVerificaton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMobileExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/CheckMobileExist" message="tns:IPatientService_CheckMobileExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/CheckMobileExistResponse" message="tns:IPatientService_CheckMobileExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientInfoByMobile" message="tns:IPatientService_GetPatientInfoByMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientInfoByMobileResponse" message="tns:IPatientService_GetPatientInfoByMobile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVerificationDisable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/SetVerificationDisable" message="tns:IPatientService_SetVerificationDisable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/SetVerificationDisableResponse" message="tns:IPatientService_SetVerificationDisable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientInfoById" message="tns:IPatientService_GetPatientInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientInfoByIdResponse" message="tns:IPatientService_GetPatientInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientAccountByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientAccountByPatientId" message="tns:IPatientService_GetPatientAccountByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientAccountByPatientIdResponse" message="tns:IPatientService_GetPatientAccountByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientByOrgIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientByOrgIds" message="tns:IPatientService_GetPatientByOrgIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientByOrgIdsResponse" message="tns:IPatientService_GetPatientByOrgIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPatientInfoBySpecialist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/InsertPatientInfoBySpecialist" message="tns:IPatientService_InsertPatientInfoBySpecialist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/InsertPatientInfoBySpecialistResponse" message="tns:IPatientService_InsertPatientInfoBySpecialist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesRecordsByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesRecordsByPatientId" message="tns:IPatientService_GetFeaturesRecordsByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesRecordsByPatientIdResponse" message="tns:IPatientService_GetFeaturesRecordsByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFeaturesRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/InsertFeaturesRecord" message="tns:IPatientService_InsertFeaturesRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/InsertFeaturesRecordResponse" message="tns:IPatientService_InsertFeaturesRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFeaturesRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/DelFeaturesRecord" message="tns:IPatientService_DelFeaturesRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/DelFeaturesRecordResponse" message="tns:IPatientService_DelFeaturesRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFeaturesLogBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/InsertFeaturesLogBatch" message="tns:IPatientService_InsertFeaturesLogBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/InsertFeaturesLogBatchResponse" message="tns:IPatientService_InsertFeaturesLogBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFeaturesLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/InsertFeaturesLog" message="tns:IPatientService_InsertFeaturesLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/InsertFeaturesLogResponse" message="tns:IPatientService_InsertFeaturesLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesTypeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesTypeList" message="tns:IPatientService_GetFeaturesTypeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesTypeListResponse" message="tns:IPatientService_GetFeaturesTypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesItemByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesItemByType" message="tns:IPatientService_GetFeaturesItemByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesItemByTypeResponse" message="tns:IPatientService_GetFeaturesItemByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientInfoBySpecialist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientInfoBySpecialist" message="tns:IPatientService_UpdatePatientInfoBySpecialist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientInfoBySpecialistResponse" message="tns:IPatientService_UpdatePatientInfoBySpecialist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientByMobileAndName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientByMobileAndName" message="tns:IPatientService_GetPatientByMobileAndName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientByMobileAndNameResponse" message="tns:IPatientService_GetPatientByMobileAndName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesItemByIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesItemByIds" message="tns:IPatientService_GetFeaturesItemByIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesItemByIdsResponse" message="tns:IPatientService_GetFeaturesItemByIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByIdForSpecialist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientInfoByIdForSpecialist" message="tns:IPatientService_GetPatientInfoByIdForSpecialist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientInfoByIdForSpecialistResponse" message="tns:IPatientService_GetPatientInfoByIdForSpecialist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfoByIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetOrgInfoByIds" message="tns:IPatientService_GetOrgInfoByIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetOrgInfoByIdsResponse" message="tns:IPatientService_GetOrgInfoByIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesRecordByPatientIdAndItemId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesRecordByPatientIdAndItemId" message="tns:IPatientService_GetFeaturesRecordByPatientIdAndItemId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesRecordByPatientIdAndItemIdResponse" message="tns:IPatientService_GetFeaturesRecordByPatientIdAndItemId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesRecordsByPatientIdAndItemIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesRecordsByPatientIdAndItemIds" message="tns:IPatientService_GetFeaturesRecordsByPatientIdAndItemIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetFeaturesRecordsByPatientIdAndItemIdsResponse" message="tns:IPatientService_GetFeaturesRecordsByPatientIdAndItemIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFeaturesRecordByPatientIdAndItemIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/DelFeaturesRecordByPatientIdAndItemIds" message="tns:IPatientService_DelFeaturesRecordByPatientIdAndItemIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/DelFeaturesRecordByPatientIdAndItemIdsResponse" message="tns:IPatientService_DelFeaturesRecordByPatientIdAndItemIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientAccountByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientAccountByPatientId" message="tns:IPatientService_UpdatePatientAccountByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientAccountByPatientIdResponse" message="tns:IPatientService_UpdatePatientAccountByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientById" message="tns:IPatientService_UpdatePatientById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientByIdResponse" message="tns:IPatientService_UpdatePatientById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePatientRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/CreatePatientRelation" message="tns:IPatientService_CreatePatientRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/CreatePatientRelationResponse" message="tns:IPatientService_CreatePatientRelation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientRelation" message="tns:IPatientService_UpdatePatientRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientRelationResponse" message="tns:IPatientService_UpdatePatientRelation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatientRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/DeletePatientRelation" message="tns:IPatientService_DeletePatientRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/DeletePatientRelationResponse" message="tns:IPatientService_DeletePatientRelation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatientRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetAllPatientRelation" message="tns:IPatientService_GetAllPatientRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetAllPatientRelationResponse" message="tns:IPatientService_GetAllPatientRelation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientRelationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientRelationInfo" message="tns:IPatientService_GetPatientRelationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientRelationInfoResponse" message="tns:IPatientService_GetPatientRelationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientRelationEducation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientRelationEducation" message="tns:IPatientService_UpdatePatientRelationEducation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientRelationEducationResponse" message="tns:IPatientService_UpdatePatientRelationEducation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientRelationCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientRelationCount" message="tns:IPatientService_GetPatientRelationCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientRelationCountResponse" message="tns:IPatientService_GetPatientRelationCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSupplementPatientInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/CreateSupplementPatientInfo" message="tns:IPatientService_CreateSupplementPatientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/CreateSupplementPatientInfoResponse" message="tns:IPatientService_CreateSupplementPatientInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplementPatientInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/UpdateSupplementPatientInfo" message="tns:IPatientService_UpdateSupplementPatientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/UpdateSupplementPatientInfoResponse" message="tns:IPatientService_UpdateSupplementPatientInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplementPatientInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetSupplementPatientInfo" message="tns:IPatientService_GetSupplementPatientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetSupplementPatientInfoResponse" message="tns:IPatientService_GetSupplementPatientInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplementPatientInfoByRelationID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetSupplementPatientInfoByRelationID" message="tns:IPatientService_GetSupplementPatientInfoByRelationID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetSupplementPatientInfoByRelationIDResponse" message="tns:IPatientService_GetSupplementPatientInfoByRelationID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPatientRelNameIsExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/CheckPatientRelNameIsExists" message="tns:IPatientService_CheckPatientRelNameIsExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/CheckPatientRelNameIsExistsResponse" message="tns:IPatientService_CheckPatientRelNameIsExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientEducationById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientEducationById" message="tns:IPatientService_UpdatePatientEducationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/UpdatePatientEducationByIdResponse" message="tns:IPatientService_UpdatePatientEducationById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplementPatientInfoBySInfoId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/DeleteSupplementPatientInfoBySInfoId" message="tns:IPatientService_DeleteSupplementPatientInfoBySInfoId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/DeleteSupplementPatientInfoBySInfoIdResponse" message="tns:IPatientService_DeleteSupplementPatientInfoBySInfoId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientAndRelationInfoByMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientService/GetPatientAndRelationInfoByMobile" message="tns:IPatientService_GetPatientAndRelationInfoByMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientService/GetPatientAndRelationInfoByMobileResponse" message="tns:IPatientService_GetPatientAndRelationInfoByMobile_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISpecialistService">
+    <wsdl:operation name="CreateNetdiagnosephrase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/CreateNetdiagnosephrase" message="tns:ISpecialistService_CreateNetdiagnosephrase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/CreateNetdiagnosephraseResponse" message="tns:ISpecialistService_CreateNetdiagnosephrase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNetdiagnosephraseById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/DeleteNetdiagnosephraseById" message="tns:ISpecialistService_DeleteNetdiagnosephraseById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/DeleteNetdiagnosephraseByIdResponse" message="tns:ISpecialistService_DeleteNetdiagnosephraseById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogicDeleteNetdiagnosephrase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/LogicDeleteNetdiagnosephrase" message="tns:ISpecialistService_LogicDeleteNetdiagnosephrase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/LogicDeleteNetdiagnosephraseResponse" message="tns:ISpecialistService_LogicDeleteNetdiagnosephrase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNetdiagnosephrase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/UpdateNetdiagnosephrase" message="tns:ISpecialistService_UpdateNetdiagnosephrase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/UpdateNetdiagnosephraseResponse" message="tns:ISpecialistService_UpdateNetdiagnosephrase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetdiagnosephraseByDrId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseByDrId" message="tns:ISpecialistService_GetNetdiagnosephraseByDrId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseByDrIdResponse" message="tns:ISpecialistService_GetNetdiagnosephraseByDrId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetdiagnosephraseByContentAndCreateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseByContentAndCreateTime" message="tns:ISpecialistService_GetNetdiagnosephraseByContentAndCreateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseByContentAndCreateTimeResponse" message="tns:ISpecialistService_GetNetdiagnosephraseByContentAndCreateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetdiagnosephraseById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseById" message="tns:ISpecialistService_GetNetdiagnosephraseById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseByIdResponse" message="tns:ISpecialistService_GetNetdiagnosephraseById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetdiagnosephraseList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseList" message="tns:ISpecialistService_GetNetdiagnosephraseList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseListResponse" message="tns:ISpecialistService_GetNetdiagnosephraseList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemsByCategoryId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetItemsByCategoryId" message="tns:ISpecialistService_GetItemsByCategoryId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetItemsByCategoryIdResponse" message="tns:ISpecialistService_GetItemsByCategoryId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNamesByItemValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetItemNamesByItemValue" message="tns:ISpecialistService_GetItemNamesByItemValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetItemNamesByItemValueResponse" message="tns:ISpecialistService_GetItemNamesByItemValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDepartmentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetAllDepartmentInfo" message="tns:ISpecialistService_GetAllDepartmentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetAllDepartmentInfoResponse" message="tns:ISpecialistService_GetAllDepartmentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpertToDepartmentByExpertId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetExpertToDepartmentByExpertId" message="tns:ISpecialistService_GetExpertToDepartmentByExpertId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetExpertToDepartmentByExpertIdResponse" message="tns:ISpecialistService_GetExpertToDepartmentByExpertId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpertPartInfoByDrId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/GetExpertPartInfoByDrId" message="tns:ISpecialistService_GetExpertPartInfoByDrId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/GetExpertPartInfoByDrIdResponse" message="tns:ISpecialistService_GetExpertPartInfoByDrId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleExpert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpecialistService/UpdateSingleExpert" message="tns:ISpecialistService_UpdateSingleExpert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpecialistService/UpdateSingleExpertResponse" message="tns:ISpecialistService_UpdateSingleExpert_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDemoAccountService" type="tns:IDemoAccountService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDemoAccountList">
+      <soap:operation soapAction="http://tempuri.org/IDemoAccountService/GetDemoAccountList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDemoAccount">
+      <soap:operation soapAction="http://tempuri.org/IDemoAccountService/GetDemoAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDemoAccountByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IDemoAccountService/GetDemoAccountByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDemoAccount">
+      <soap:operation soapAction="http://tempuri.org/IDemoAccountService/SaveDemoAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RmoveDemoAccount">
+      <soap:operation soapAction="http://tempuri.org/IDemoAccountService/RmoveDemoAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDemoAccountList">
+      <soap:operation soapAction="http://tempuri.org/IDemoAccountService/GetPatientDemoAccountList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDemoAccountRelation">
+      <soap:operation soapAction="http://tempuri.org/IDemoAccountService/AddDemoAccountRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDemoAccountRelation">
+      <soap:operation soapAction="http://tempuri.org/IDemoAccountService/RemoveDemoAccountRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IDepartmentinfoService" type="tns:IDepartmentinfoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DelDepartRelateByExpertID">
+      <soap:operation soapAction="http://tempuri.org/IDepartmentinfoService/DelDepartRelateByExpertID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExpertToDepartment">
+      <soap:operation soapAction="http://tempuri.org/IDepartmentinfoService/AddExpertToDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IDoctorinfoService" type="tns:IDoctorinfoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDoctorinfoByDrID">
+      <soap:operation soapAction="http://tempuri.org/IDoctorinfoService/GetDoctorinfoByDrID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDoctorinfo">
+      <soap:operation soapAction="http://tempuri.org/IDoctorinfoService/UpdateDoctorinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleDoctorinfo">
+      <soap:operation soapAction="http://tempuri.org/IDoctorinfoService/UpdateSingleDoctorinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorinfoByDrIDs">
+      <soap:operation soapAction="http://tempuri.org/IDoctorinfoService/GetDoctorinfoByDrIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorListByCondition">
+      <soap:operation soapAction="http://tempuri.org/IDoctorinfoService/GetDoctorListByCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IManageTreeService" type="tns:IManageTreeService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IManageTreeService_Get">
+      <soap:operation soapAction="http://tempuri.org/IManageTreeService/IManageTreeService_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChildNodesById">
+      <soap:operation soapAction="http://tempuri.org/IManageTreeService/GetChildNodesById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IManageTreeService_Add">
+      <soap:operation soapAction="http://tempuri.org/IManageTreeService/IManageTreeService_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IManageTreeService_Update">
+      <soap:operation soapAction="http://tempuri.org/IManageTreeService/IManageTreeService_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IManageTreeService_Remove">
+      <soap:operation soapAction="http://tempuri.org/IManageTreeService/IManageTreeService_Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveOrgToOrg">
+      <soap:operation soapAction="http://tempuri.org/IManageTreeService/MoveOrgToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IXysDoctorOrgService" type="tns:IXysDoctorOrgService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetXysDoctorOrgListByDoctorId">
+      <soap:operation soapAction="http://tempuri.org/IXysDoctorOrgService/GetXysDoctorOrgListByDoctorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgIdsAndDrIdsByDrIds">
+      <soap:operation soapAction="http://tempuri.org/IXysDoctorOrgService/GetOrgIdsAndDrIdsByDrIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddXysDoctorOrgByList">
+      <soap:operation soapAction="http://tempuri.org/IXysDoctorOrgService/AddXysDoctorOrgByList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteXysDoctorOrgByDrId">
+      <soap:operation soapAction="http://tempuri.org/IXysDoctorOrgService/DeleteXysDoctorOrgByDrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpDateXysDoctorOrgIsDeleteByDrId">
+      <soap:operation soapAction="http://tempuri.org/IXysDoctorOrgService/UpDateXysDoctorOrgIsDeleteByDrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteXysDoctorOrgByIsDelete">
+      <soap:operation soapAction="http://tempuri.org/IXysDoctorOrgService/DeleteXysDoctorOrgByIsDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshXysDoctorOrg">
+      <soap:operation soapAction="http://tempuri.org/IXysDoctorOrgService/RefreshXysDoctorOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IXysOrganizationService" type="tns:IXysOrganizationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListByOrgId">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/GetListByOrgId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorTreeRelationIds">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/GetDoctorTreeRelationIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IXysOrganizationService_Add">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/IXysOrganizationService_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IXysOrganizationService_Remove">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/IXysOrganizationService_Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMXysOrganizationByDrId">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/GetMXysOrganizationByDrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrIdByTreeLeaf">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/GetDrIdByTreeLeaf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrIdByTree">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/GetDrIdByTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveMemberToOrg">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/MoveMemberToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXysOrganizationById">
+      <soap:operation soapAction="http://tempuri.org/IXysOrganizationService/GetXysOrganizationById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPatientService" type="tns:IPatientService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePatientInfo">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/CreatePatientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientInfoById">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/UpdatePatientInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPatientAccountExist">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/CheckPatientAccountExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResisterSmsLog">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/AddResisterSmsLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerificaton">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetVerificaton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMobileExist">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/CheckMobileExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByMobile">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientInfoByMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVerificationDisable">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/SetVerificationDisable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoById">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientAccountByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientAccountByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientByOrgIds">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientByOrgIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPatientInfoBySpecialist">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/InsertPatientInfoBySpecialist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesRecordsByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetFeaturesRecordsByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFeaturesRecord">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/InsertFeaturesRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFeaturesRecord">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/DelFeaturesRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFeaturesLogBatch">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/InsertFeaturesLogBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFeaturesLog">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/InsertFeaturesLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesTypeList">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetFeaturesTypeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesItemByType">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetFeaturesItemByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientInfoBySpecialist">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/UpdatePatientInfoBySpecialist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientByMobileAndName">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientByMobileAndName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesItemByIds">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetFeaturesItemByIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientInfoByIdForSpecialist">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientInfoByIdForSpecialist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfoByIds">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetOrgInfoByIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesRecordByPatientIdAndItemId">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetFeaturesRecordByPatientIdAndItemId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesRecordsByPatientIdAndItemIds">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetFeaturesRecordsByPatientIdAndItemIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFeaturesRecordByPatientIdAndItemIds">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/DelFeaturesRecordByPatientIdAndItemIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientAccountByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/UpdatePatientAccountByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientById">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/UpdatePatientById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePatientRelation">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/CreatePatientRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientRelation">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/UpdatePatientRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatientRelation">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/DeletePatientRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatientRelation">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetAllPatientRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientRelationInfo">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientRelationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientRelationEducation">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/UpdatePatientRelationEducation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientRelationCount">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientRelationCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSupplementPatientInfo">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/CreateSupplementPatientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplementPatientInfo">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/UpdateSupplementPatientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplementPatientInfo">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetSupplementPatientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplementPatientInfoByRelationID">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetSupplementPatientInfoByRelationID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPatientRelNameIsExists">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/CheckPatientRelNameIsExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientEducationById">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/UpdatePatientEducationById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplementPatientInfoBySInfoId">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/DeleteSupplementPatientInfoBySInfoId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientAndRelationInfoByMobile">
+      <soap:operation soapAction="http://tempuri.org/IPatientService/GetPatientAndRelationInfoByMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISpecialistService" type="tns:ISpecialistService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNetdiagnosephrase">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/CreateNetdiagnosephrase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNetdiagnosephraseById">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/DeleteNetdiagnosephraseById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogicDeleteNetdiagnosephrase">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/LogicDeleteNetdiagnosephrase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNetdiagnosephrase">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/UpdateNetdiagnosephrase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetdiagnosephraseByDrId">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseByDrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetdiagnosephraseByContentAndCreateTime">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseByContentAndCreateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetdiagnosephraseById">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetdiagnosephraseList">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetNetdiagnosephraseList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemsByCategoryId">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetItemsByCategoryId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNamesByItemValue">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetItemNamesByItemValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDepartmentInfo">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetAllDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpertToDepartmentByExpertId">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetExpertToDepartmentByExpertId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpertPartInfoByDrId">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/GetExpertPartInfoByDrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleExpert">
+      <soap:operation soapAction="http://tempuri.org/ISpecialistService/UpdateSingleExpert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserService">
+    <wsdl:port name="BasicHttpBinding_IDemoAccountService" binding="tns:BasicHttpBinding_IDemoAccountService">
+      <soap:address location="http://172.18.100.23:9600/UserService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IDepartmentinfoService" binding="tns:BasicHttpBinding_IDepartmentinfoService">
+      <soap:address location="http://172.18.100.23:9600/UserService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IDoctorinfoService" binding="tns:BasicHttpBinding_IDoctorinfoService">
+      <soap:address location="http://172.18.100.23:9600/UserService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IManageTreeService" binding="tns:BasicHttpBinding_IManageTreeService">
+      <soap:address location="http://172.18.100.23:9600/UserService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IXysDoctorOrgService" binding="tns:BasicHttpBinding_IXysDoctorOrgService">
+      <soap:address location="http://172.18.100.23:9600/UserService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IXysOrganizationService" binding="tns:BasicHttpBinding_IXysOrganizationService">
+      <soap:address location="http://172.18.100.23:9600/UserService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPatientService" binding="tns:BasicHttpBinding_IPatientService">
+      <soap:address location="http://172.18.100.23:9600/UserService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISpecialistService" binding="tns:BasicHttpBinding_ISpecialistService">
+      <soap:address location="http://172.18.100.23:9600/UserService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

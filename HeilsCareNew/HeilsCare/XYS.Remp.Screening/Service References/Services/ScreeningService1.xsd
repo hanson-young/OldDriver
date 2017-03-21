@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.18.100.23:9614/ScreeningService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Screening.Model" />
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pwd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="LoginResult" nillable="true" type="q1:M_User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddQuestionUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionnaireCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+        <xs:element minOccurs="0" name="questionnaireStatus" type="xs:int" />
+        <xs:element minOccurs="0" name="answerTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="questionnaireScore" type="xs:decimal" />
+        <xs:element minOccurs="0" name="activityId" type="xs:int" />
+        <xs:element minOccurs="0" name="questionnaireName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="questionnaireType" type="xs:byte" />
+        <xs:element minOccurs="0" name="activityName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="familyMemberID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddQuestionUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddQuestionUserResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireResultList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+        <xs:element minOccurs="0" name="questionnaireCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireResultListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetQuestionnaireResultListResult" nillable="true" type="q2:ArrayOfM_QuestionnaireResultDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddQuestionResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="questionType" type="xs:int" />
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+        <xs:element minOccurs="0" name="questionResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="questionUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="questionScore" type="xs:decimal" />
+        <xs:element minOccurs="0" name="pQuestionWeightScore" type="xs:decimal" />
+        <xs:element minOccurs="0" name="pQuestionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="familyMemberID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddQuestionResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddQuestionResultResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserRecordStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionnaireRecodId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserRecordStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateUserRecordStatusResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSmsValidCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSmsValidCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetSmsValidCodeResult" nillable="true" type="q3:M_Msg" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSmsValidCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smsCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSmsValidCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="CheckSmsValidCodeResult" nillable="true" type="q4:M_Msg" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Regist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patientName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="credNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sex" type="xs:int" />
+        <xs:element minOccurs="0" name="birthDay" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="orgId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="RegistResult" nillable="true" type="q5:M_Msg" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetUserInfoResult" nillable="true" type="q6:M_User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoByCardNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cradNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoByCardNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetUserInfoByCardNoResult" nillable="true" type="q7:M_User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoByAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoByAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserInfoByAccountResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuestionnaireResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="questionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newQuestionResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="questionScore" type="xs:decimal" />
+        <xs:element minOccurs="0" name="pQuestionWeightScore" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuestionnaireResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateQuestionnaireResultResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByOrgCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByOrgCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetOrganizationByOrgCodeResult" nillable="true" type="q8:M_OrganizationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationInfoByParentOrgID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentOrgID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationInfoByParentOrgIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetOrganizationInfoByParentOrgIDResult" nillable="true" type="q9:ArrayOfM_OrganizationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCottageActivityListByOrgId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrgId" type="xs:int" />
+        <xs:element minOccurs="0" name="StatusID" type="xs:byte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCottageActivityListByOrgIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetCottageActivityListByOrgIdResult" nillable="true" type="q10:ArrayOfM_CottageActivity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoctorInfoByAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoctorInfoByAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetDoctorInfoByAccountResult" nillable="true" type="q11:M_DoctorInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHouseListForHouseApp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHouseListForHouseAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetHouseListForHouseAppResult" nillable="true" type="q12:ArrayOfM_HealthHouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPatientToCottageActivity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="entity" nillable="true" type="q13:M_CottageActivityRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPatientToCottageActivityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="AddPatientToCottageActivityResult" nillable="true" type="q14:M_CottageActivityRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMemberAllRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:int" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="records" nillable="true" type="q15:ArrayOfM_MemberFeaturesRecord" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="recordLog" nillable="true" type="q16:M_MemberFeaturesRecordLogExt" />
+        <xs:element minOccurs="0" name="CARecordID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMemberAllRecordsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCottageActivityByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCottageActivityByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetCottageActivityByNameResult" nillable="true" type="q17:ArrayOfM_CottageActivity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHealthHouseByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHealthHouseByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetHealthHouseByNameResult" nillable="true" type="q18:ArrayOfM_HealthHouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuestionUserScoreStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionnaireRecodID" type="xs:int" />
+        <xs:element minOccurs="0" name="score" type="xs:decimal" />
+        <xs:element minOccurs="0" name="questionnaireStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuestionUserScoreStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateQuestionUserScoreStatusResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireUserDetailsByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionnaireCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireUserDetailsByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetQuestionnaireUserDetailsByCodeResult" nillable="true" type="q19:ArrayOfM_QuestionnaireUserDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireResultDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireResultDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetQuestionnaireResultDetailsResult" nillable="true" type="q20:ArrayOfM_QuestionnaireResultDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuestionUserScore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionnaireRecodID" type="xs:int" />
+        <xs:element minOccurs="0" name="score" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuestionUserScoreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateQuestionUserScoreResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireListByTypeAndCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionnaireCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="questionnaireType" type="xs:byte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireListByTypeAndCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetQuestionnaireListByTypeAndCodeResult" nillable="true" type="q21:ArrayOfM_QuestionnaireUserDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuestionnaireResultWeightScore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="weightScore" type="xs:decimal" />
+        <xs:element minOccurs="0" name="resultId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQuestionnaireResultWeightScoreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateQuestionnaireResultWeightScoreResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCottageActivityTypeTo1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="type" type="xs:int" />
+        <xs:element minOccurs="0" name="drId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCottageActivityTypeTo1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCottageActivityTypeTo1Result" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordByParm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CActivityID" type="xs:int" />
+        <xs:element minOccurs="0" name="PatientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordByParmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetRecordByParmResult" nillable="true" type="q22:M_CottageActivityRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordByRelationtId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cActivityId" type="xs:int" />
+        <xs:element minOccurs="0" name="relationtId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordByRelationtIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetRecordByRelationtIdResult" nillable="true" type="q23:M_CottageActivityRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCottageActivityRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="mCottageActivityRecord" nillable="true" type="q24:M_CottageActivityRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCottageActivityRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCottageActivityRecordResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMCottageActivityById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMCottageActivityByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Screening.Model" minOccurs="0" name="GetMCottageActivityByIdResult" nillable="true" type="q25:M_CottageActivity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

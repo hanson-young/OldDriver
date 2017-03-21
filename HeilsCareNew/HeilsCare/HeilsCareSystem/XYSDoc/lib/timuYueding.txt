@@ -1,0 +1,12 @@
+﻿
+脑卒中问卷代码： NAOCUZHONG
+老年痴呆问卷代码：301AD
+足踝疾患康复问卷代码：KANGFUZUHUAI
+早癌筛查：胃癌：ZAOAIWEIAI
+          肺癌：ZAOAIFEIAI
+		  乳腺癌：ZAOAIRUXIAN
+		  大肠癌：ZAOAIDACHANG
+		  肝癌：ZAOAIGANAI
+
+每个题目编号为 问卷代码+题目编号的格式： 
+   比如 脑卒中问卷第一题： NAOCUZHONG.1    第一题的子小题：NAOCUZHONG.1.1

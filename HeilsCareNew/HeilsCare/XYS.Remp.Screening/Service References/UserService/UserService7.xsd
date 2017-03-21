@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/User.Model.MemberFeatures" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/User.Model.MemberFeatures" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfM_MemberFeaturesRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_MemberFeaturesRecord" nillable="true" type="tns:M_MemberFeaturesRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_MemberFeaturesRecord" nillable="true" type="tns:ArrayOfM_MemberFeaturesRecord" />
+  <xs:complexType name="M_MemberFeaturesRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MFItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="MFItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientID" type="xs:int" />
+      <xs:element minOccurs="0" name="RecordID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_MemberFeaturesRecord" nillable="true" type="tns:M_MemberFeaturesRecord" />
+  <xs:complexType name="ArrayOfM_Memberfeaturesrecordlog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_Memberfeaturesrecordlog" nillable="true" type="tns:M_Memberfeaturesrecordlog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_Memberfeaturesrecordlog" nillable="true" type="tns:ArrayOfM_Memberfeaturesrecordlog" />
+  <xs:complexType name="M_Memberfeaturesrecordlog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DoctorID" type="xs:int" />
+      <xs:element minOccurs="0" name="DoctorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DrID" type="xs:int" />
+      <xs:element minOccurs="0" name="DrName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MFItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="MFItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperationType" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientID" type="xs:int" />
+      <xs:element minOccurs="0" name="RecordLogID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_Memberfeaturesrecordlog" nillable="true" type="tns:M_Memberfeaturesrecordlog" />
+  <xs:complexType name="ArrayOfM_MemberFeaturesType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_MemberFeaturesType" nillable="true" type="tns:M_MemberFeaturesType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_MemberFeaturesType" nillable="true" type="tns:ArrayOfM_MemberFeaturesType" />
+  <xs:complexType name="M_MemberFeaturesType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPushApp" type="xs:int" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:int" />
+      <xs:element minOccurs="0" name="MFTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="MFTypeLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="MFTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MFTypeOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="MFTypeParentID" type="xs:int" />
+      <xs:element minOccurs="0" name="MFTypePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_MemberFeaturesType" nillable="true" type="tns:M_MemberFeaturesType" />
+  <xs:complexType name="ArrayOfM_MemberFeaturesItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="M_MemberFeaturesItem" nillable="true" type="tns:M_MemberFeaturesItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfM_MemberFeaturesItem" nillable="true" type="tns:ArrayOfM_MemberFeaturesItem" />
+  <xs:complexType name="M_MemberFeaturesItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:int" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:int" />
+      <xs:element minOccurs="0" name="MFItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="MFItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MFTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrgID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="M_MemberFeaturesItem" nillable="true" type="tns:M_MemberFeaturesItem" />
+</xs:schema>
