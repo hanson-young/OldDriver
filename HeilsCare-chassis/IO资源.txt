@@ -1,0 +1,69 @@
+IO资源占用情况
+
+底盘电机
+左边电机：PA0(pwm) PA2(dir)
+右边电机：PA1(pwm) PA3(dir)
+
+碰撞开关
+0号：PF12
+1号：PF13
+2号：PF14
+3号：PF15
+
+超声波
+0号：PC0(echo) PD12(trig)
+1号：PC1(echo) PD13(trig)
+2号：PC2(echo) PD14(trig)
+3号：PC3(echo) PD15(trig)
+
+4号：PF0(echo) PF4(trig)
+5号：PF1(echo) PF5(trig)
+6号：PF2(echo) PF6(trig)
+7号：PF3(echo) PF7(trig)
+
+红外测距
+0号：PA4(adc)
+1号：PA5(adc)
+2号：PA6(adc)
+3号：PA7(adc)
+4号：PC4(adc)
+5号：PC5(adc)
+
+手柄    
+输入  PB12(DI)
+输出  PB13(DO) PB14(CS) PB15(CLK)
+
+触摸板
+PB2 (OTT2001A复位引脚)
+PF10 (OTT2001A中断引脚)
+
+液晶屏
+PB0(背光)
+PD0 PD1 PD4 PD5 PD8 PD9 PD10 PD14 PD15
+PE7 PE8 P9 PE10 PE11 PE12 PE13 PE14 PE15
+PG0 PG12
+PB1(IIC_SCL)
+PF9(IIC_SDA)
+
+PB10(IIC_SCL)
+PB11(IIC_SDA)
+
+USART通信
+PB6(tx) PB7(rx)
+PC10(tx) PC11(rx)
+
+
+GPIOA
+0 1 2 3 4 5 6 7 
+GPIOB
+1 2 6 7 10 11 12 13 14 15
+GPIOC
+0 1 2 3 4 5 10 11
+GPIOD
+0 1 4 5 8 9 12 13 14 15
+GPIOE
+7 8 9 10 11 12 13 14 15
+GPIOF
+1 2 3 4 5 6 7 8 9 10 12 13 14 15
+GPIOG
+0 12
