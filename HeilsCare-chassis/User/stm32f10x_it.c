@@ -188,7 +188,7 @@ void USART3_IRQHandler(void)
 u8 PcstartNum[2] = {0};
 PC_Data PcData;
 u8 pc_cnt_flag = 0;
-u8 pc_cnt = 0;
+u32 pc_cnt = 0;
 u8 pc_rec_cnt = 0;
 u8 pc_tmp_data[4] = {0};
 

@@ -1,9 +1,9 @@
 /**
   ******************************************************************************
-  * @file    _main.c
+  * @file    _ws2812b.c
   * @author  flysnow
   * @version V1.0
-  * @date    2016-8-6
+  * @date    2017-2-26
   * @brief   
   ******************************************************************************
   * @attention
@@ -12,26 +12,11 @@
   */
 #include "includes.h"
 #include "../System/sys.h" 	
-#include "../Driver/_delay.h"	
 #include "../Task/_task.h" 
 #include "../Driver/_delay.h"
-#include "../Driver/_can.h"
-#include "../Algorithm/_mecanum.h"
-#include "../Driver/_pwm.h"
-#include "../Driver/_uart.h"
-#include "../Driver/_lcd.h"
 #include "../Driver/_io_status.h"
 
-#include "../Driver/_tim.h"
-#include "../Driver/_ps2.h"
-#include "../Algorithm/_pid.h"
-#include "_ctiic.h"
-#include "_touch.h"
-#include "_24cxx.h"
-#include "_myiic.h"
-#include "_ott2001a.h"
-#include "_lcd.h"
-#include "_lcdio.h"
+
 u8 RGB_BUF[24];
 
 u8 Led_Tab[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90,0x88,0x83,0xC6,0xA1,0x86,0x8E};        

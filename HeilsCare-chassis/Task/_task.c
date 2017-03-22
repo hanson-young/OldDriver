@@ -163,8 +163,13 @@ void LcdTask(void *para)
 	}
 }
 
+
+extern u32 pc_cnt;
 void MainTask(void)
 {
+	u32 last_pc_cnt = 0;
+	u32 time_count = 0;
+	u8 time_out = 0;
 	Ultrasonic[0].ClcUtralData(0);
  	Ultrasonic[1].ClcUtralData(1);
  	Ultrasonic[2].ClcUtralData(2);
@@ -220,24 +225,25 @@ void MainTask(void)
 		LCD_WriteString("r_right:");		
 		LCD_WriteFloat(r_now[1]);
 		//setDiffSpeed(PcData.speed_y.fl32 * 500,PcData.speed_x.fl32 * 500);
-		setDiffSpeed(100,100);
-//  		Ultrasonic[0].UtralMea(0);
-// 		Ultrasonic[0].Ultrafilter(0);
-//  		Ultrasonic[1].UtralMea(1);
-// 		Ultrasonic[1].Ultrafilter(1);
-//  		Ultrasonic[2].UtralMea(2);
-// 		Ultrasonic[2].Ultrafilter(2);
-//  		Ultrasonic[3].UtralMea(3);
-// 		Ultrasonic[3].Ultrafilter(3);
-		 		Ultrasonic[4].UtralMea(4);
-		Ultrasonic[4].Ultrafilter(4);
-		 		Ultrasonic[5].UtralMea(5);
-		Ultrasonic[5].Ultrafilter(5);
-		 		Ultrasonic[6].UtralMea(6);
-		Ultrasonic[6].Ultrafilter(6);
-		 		Ultrasonic[7].UtralMea(7);
-		Ultrasonic[7].Ultrafilter(7);
-
+		if(pc_cnt == last_pc_cnt)
+		{
+			time_count++;
+			if(time_count > 50)
+				time_out = 1;
+		}
+		else
+		{
+			time_count = 0;
+		}
+		if(time_out)
+		{
+			setDiffSpeed(0,0);
+		}
+		else
+		{
+			setDiffSpeed(0,1000);
+		}
+		last_pc_cnt = pc_cnt;
 		delay_ms(10);
 	};
 }

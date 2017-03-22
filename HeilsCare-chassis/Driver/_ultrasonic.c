@@ -322,4 +322,21 @@ void bubble_sort(float a[], u8 n)
 }
 
 
+//  		Ultrasonic[0].UtralMea(0);
+// 		Ultrasonic[0].Ultrafilter(0);
+//  		Ultrasonic[1].UtralMea(1);
+// 		Ultrasonic[1].Ultrafilter(1);
+//  		Ultrasonic[2].UtralMea(2);
+// 		Ultrasonic[2].Ultrafilter(2);
+//  		Ultrasonic[3].UtralMea(3);
+// 		Ultrasonic[3].Ultrafilter(3);
+// 		 		Ultrasonic[4].UtralMea(4);
+// 		Ultrasonic[4].Ultrafilter(4);
+// 		 		Ultrasonic[5].UtralMea(5);
+// 		Ultrasonic[5].Ultrafilter(5);
+// 		 		Ultrasonic[6].UtralMea(6);
+// 		Ultrasonic[6].Ultrafilter(6);
+// 		 		Ultrasonic[7].UtralMea(7);
+// 		Ultrasonic[7].Ultrafilter(7);
+
 /******************* (C) COPYRIGHT 2016 Heils *****END OF FILE****/

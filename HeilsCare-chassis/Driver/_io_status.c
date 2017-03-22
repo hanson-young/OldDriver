@@ -37,9 +37,11 @@ sIO_t io_structs[] =
 		{OUTPUT,		PD,			 13,				0xFF,					0xFF,		  	0xFF,					0xFF		  },
 		{OUTPUT,		PD,			 14,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 		{OUTPUT,		PD,			 15,				0xFF,					0xFF,		  	0xFF,					0xFF			},
-
-			{OUTPUT,		PA,			 2,				0xFF,					0xFF,		  	0xFF,					0xFF			},
-			{OUTPUT,		PA,			 3,				0xFF,					0xFF,		  	0xFF,					0xFF			},
+//电机方向信号
+		{OUTPUT,		PA,			 2,				0xFF,					0xFF,		  	0xFF,					0xFF			},
+		{OUTPUT,		PA,			 3,				0xFF,					0xFF,		  	0xFF,					0xFF			},
+//灯带
+		{OUTPUT,		PA,			 8,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 //防撞条IO触发配置信息
 
 		{INPUT_TRIG,			PF,			 12,					0x0C,					EXTI15_10_IRQn,		  		4,					1			},

@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\Algorithm -I..\Core -I..\Driver -I..\FWLib\inc -I..\FWLib\src -I..\Start -I..\System -I..\Task -I..\Ucosii\Config -I..\Ucosii\Core -I..\Ucosii\Port -I..\User --c99 
+-I "D:\Program Files (x86)\keil\ARM\RV31\INC" 
+-I "D:\Program Files (x86)\keil\ARM\CMSIS\Include" 
+-I "D:\Program Files (x86)\keil\ARM\Inc\ST\STM32F10x" 
+-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o "..\User\Objects\stm32f10x_it.o" --omf_browse "..\User\Objects\stm32f10x_it.crf" --depend "..\User\Objects\stm32f10x_it.d" "..\User\stm32f10x_it.c"
