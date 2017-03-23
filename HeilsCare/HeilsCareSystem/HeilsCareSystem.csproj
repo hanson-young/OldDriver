@@ -1,0 +1,1913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E60370FD-BC87-4A49-B69A-F6CE38CCA6CA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HeilsCareSystem</RootNamespace>
+    <AssemblyName>HeilsCareSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AxInterop.ShockwaveFlashObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.UnityWebPlayerAXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AxInterop.UnityWebPlayerAXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=12.5.0.2, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0, processorArchitecture=MSIL" />
+    <Reference Include="Interop.UnityWebPlayerAXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\lib\Interop.UnityWebPlayerAXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\lib\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dd6c0c2e5afc6c78, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.visualstudio">
+      <HintPath>..\lib\mysql.visualstudio.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.web, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Projects\WCF.Demo\WCF.Demo.Service\Libs\mysql.web.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZedGraph, Version=4.2.1.18899, Culture=neutral, PublicKeyToken=02a83cbd123fcd60">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CVRSDK.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="FlashPlayerHandle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="窗体\GynasticVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\GynasticVideo.Designer.cs">
+      <DependentUpon>GynasticVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\PlayerTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="窗体\GameThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\GameThree.Designer.cs">
+      <DependentUpon>GameThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\GameTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\GameTwo.Designer.cs">
+      <DependentUpon>GameTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\GameOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\GameOne.Designer.cs">
+      <DependentUpon>GameOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gifAnimation.cs" />
+    <Compile Include="gifLib.cs" />
+    <Compile Include="GymnasicHandler.cs" />
+    <Compile Include="窗体\GymnasticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\GymnasticForm.Designer.cs">
+      <DependentUpon>GymnasticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GymnasticHandleFunctios.cs" />
+    <Compile Include="窗体\GyNastic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\GyNastic.Designer.cs">
+      <DependentUpon>GyNastic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\GynasticGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\GynasticGame.Designer.cs">
+      <DependentUpon>GynasticGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterActionHandleFunctions.cs" />
+    <Compile Include="InterActionHandler.cs" />
+    <Compile Include="LightValue.cs" />
+    <Compile Include="窗体\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginHandler.cs" />
+    <Compile Include="窗体\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\MainFormOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\MainFormOld.Designer.cs">
+      <DependentUpon>MainFormOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionarHandler.cs" />
+    <Compile Include="窗体\QuestionareThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\QuestionareThree.Designer.cs">
+      <DependentUpon>QuestionareThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\QuestionareFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\QuestionareFour.Designer.cs">
+      <DependentUpon>QuestionareFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\QuestionareTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\QuestionareTwo.Designer.cs">
+      <DependentUpon>QuestionareTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\QuestionareOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\QuestionareOne.Designer.cs">
+      <DependentUpon>QuestionareOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterHandler.cs" />
+    <Compile Include="SharedDataAndMethod.cs" />
+    <Compile Include="SoftWareUpdate.cs" />
+    <Compile Include="SystemAdminHandleFunctions.cs" />
+    <Compile Include="SystemAdminHandler.cs" />
+    <Compile Include="Wifi.cs" />
+    <Compile Include="XYSDoc\AD\FirstFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\FirstFrm.Designer.cs">
+      <DependentUpon>FirstFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionEight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionEight.Designer.cs">
+      <DependentUpon>QuestionEight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionFive.Designer.cs">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionFourB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionFourB.Designer.cs">
+      <DependentUpon>QuestionFourB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionFourC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionFourC.Designer.cs">
+      <DependentUpon>QuestionFourC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionNine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionNine.Designer.cs">
+      <DependentUpon>QuestionNine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionSeven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionSeven.Designer.cs">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionSix.Designer.cs">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\AD\Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\AD\Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\APIClient\M_AuthState.cs" />
+    <Compile Include="XYSDoc\APIClient\OAuthHttpClient.cs" />
+    <Compile Include="XYSDoc\APIClient\ScreenWebapiClient.cs" />
+    <Compile Include="XYSDoc\APIClient\Token.cs" />
+    <Compile Include="XYSDoc\AttachContextBehavior.cs" />
+    <Compile Include="XYSDoc\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\HistoryData\HistoryDataManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\HistoryData\HistoryDataManager.Designer.cs">
+      <DependentUpon>HistoryDataManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\HistoryData\KangfuJizhu.cs" />
+    <Compile Include="XYSDoc\HistoryData\KangfuZuHuai.cs" />
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Ankle\1.0\Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionFive.Designer.cs">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionSeven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionSeven.Designer.cs">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionSix.Designer.cs">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\JiZhu\Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionEight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionEight.Designer.cs">
+      <DependentUpon>QuestionEight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionFive.Designer.cs">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionNine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionNine.Designer.cs">
+      <DependentUpon>QuestionNine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionSeven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionSeven.Designer.cs">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionSix.Designer.cs">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionTen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionTen.Designer.cs">
+      <DependentUpon>QuestionTen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\LunYi\Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ScreeningSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ScreeningSelect.Designer.cs">
+      <DependentUpon>ScreeningSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionFive.Designer.cs">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionSix.Designer.cs">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ShouShangZhi\Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionFive.Designer.cs">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\SpineBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\Spine\SpineBaseForm.Designer.cs">
+      <DependentUpon>SpineBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionEight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionEight.Designer.cs">
+      <DependentUpon>QuestionEight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionFive.Designer.cs">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionNine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionNine.Designer.cs">
+      <DependentUpon>QuestionNine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionSeven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionSeven.Designer.cs">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionSix.Designer.cs">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionTen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionTen.Designer.cs">
+      <DependentUpon>QuestionTen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\ResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Kangfu\ZuHuai\ResultForm.Designer.cs">
+      <DependentUpon>ResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\LoginFormNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\LoginFormNew.Designer.cs">
+      <DependentUpon>LoginFormNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\MainfrmConfirmSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\MainfrmConfirmSave.Designer.cs">
+      <DependentUpon>MainfrmConfirmSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\MDIMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\MDIMainForm.Designer.cs">
+      <DependentUpon>MDIMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Model\Enums\BloodPressureState.cs" />
+    <Compile Include="XYSDoc\Model\Enums\BloodSugarEnvir.cs" />
+    <Compile Include="XYSDoc\Model\Enums\BloodSugarState.cs" />
+    <Compile Include="XYSDoc\Model\Enums\WeightStandardState.cs" />
+    <Compile Include="XYSDoc\Model\M_APIError.cs" />
+    <Compile Include="XYSDoc\Model\M_APIReturnMsg.cs" />
+    <Compile Include="XYSDoc\Model\M_CAPaging.cs" />
+    <Compile Include="XYSDoc\Model\M_CottageActivity.cs" />
+    <Compile Include="XYSDoc\Model\M_CottageActivityRecord.cs" />
+    <Compile Include="XYSDoc\Model\M_DelMemberFeaturesRecord.cs" />
+    <Compile Include="XYSDoc\Model\M_DoctorInfo.cs" />
+    <Compile Include="XYSDoc\Model\M_HealthHouse.cs" />
+    <Compile Include="XYSDoc\Model\M_LogForAtm.cs" />
+    <Compile Include="XYSDoc\Model\M_MemberAllRecord.cs" />
+    <Compile Include="XYSDoc\Model\M_MemberFeaturesRecord.cs" />
+    <Compile Include="XYSDoc\Model\M_MemberFeaturesRecordLogExt.cs" />
+    <Compile Include="XYSDoc\Model\M_Msg.cs" />
+    <Compile Include="XYSDoc\Model\M_OrganizationInfo.cs" />
+    <Compile Include="XYSDoc\Model\M_PatientExtendInfo.cs" />
+    <Compile Include="XYSDoc\Model\M_Questionnaire.cs" />
+    <Compile Include="XYSDoc\Model\M_QuestionnaireResultDetail.cs" />
+    <Compile Include="XYSDoc\Model\M_QuestionnaireUserDetail.cs" />
+    <Compile Include="XYSDoc\Model\M_Test.cs" />
+    <Compile Include="XYSDoc\Model\M_User.cs" />
+    <Compile Include="XYSDoc\Naocuzhong\FirstFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\FirstFrm.Designer.cs">
+      <DependentUpon>FirstFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionFive.Designer.cs">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionSeven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionSeven.Designer.cs">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionSix.Designer.cs">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\RestulFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Naocuzhong\RestulFrm.Designer.cs">
+      <DependentUpon>RestulFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\COPD\CopdOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\COPD\CopdOne.Designer.cs">
+      <DependentUpon>CopdOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\COPD\CopdResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\COPD\CopdResult.Designer.cs">
+      <DependentUpon>CopdResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\COPD\CopdThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\COPD\CopdThree.Designer.cs">
+      <DependentUpon>CopdThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\COPD\CopdTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\COPD\CopdTwo.Designer.cs">
+      <DependentUpon>CopdTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionFive.Designer.cs">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionFour.Designer.cs">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionOne.Designer.cs">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionSix.Designer.cs">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionThree.Designer.cs">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\QuestionTwo.Designer.cs">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Diabetes\Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssFive.Designer.cs">
+      <DependentUpon>IpssFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssFour.Designer.cs">
+      <DependentUpon>IpssFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssOne.Designer.cs">
+      <DependentUpon>IpssOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssResult.Designer.cs">
+      <DependentUpon>IpssResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssSix.Designer.cs">
+      <DependentUpon>IpssSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssThree.Designer.cs">
+      <DependentUpon>IpssThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\IPSS\IpssTwo.Designer.cs">
+      <DependentUpon>IpssTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabFour.Designer.cs">
+      <DependentUpon>OabFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabOne.Designer.cs">
+      <DependentUpon>OabOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabResult.Designer.cs">
+      <DependentUpon>OabResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabThree.Designer.cs">
+      <DependentUpon>OabThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\OAB\OabTwo.Designer.cs">
+      <DependentUpon>OabTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\Paruria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\Paruria\Paruria.Designer.cs">
+      <DependentUpon>Paruria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\ScreenOtherSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\ScreenOtherSelect.Designer.cs">
+      <DependentUpon>ScreenOtherSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahFive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahFive.Designer.cs">
+      <DependentUpon>ThahFive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahFour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahFour.Designer.cs">
+      <DependentUpon>ThahFour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahOne.Designer.cs">
+      <DependentUpon>ThahOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahResult.Designer.cs">
+      <DependentUpon>ThahResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahSix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahSix.Designer.cs">
+      <DependentUpon>ThahSix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahThree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahThree.Designer.cs">
+      <DependentUpon>ThahThree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Other\THAH\ThahTwo.Designer.cs">
+      <DependentUpon>ThahTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Player\WMPlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Player\WMPlayerForm.Designer.cs">
+      <DependentUpon>WMPlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Player\WMPlayerTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Player\WMPlayerTest.Designer.cs">
+      <DependentUpon>WMPlayerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Public\ClientInfo.cs" />
+    <Compile Include="XYSDoc\Public\ClinetHelp.cs" />
+    <Compile Include="XYSDoc\Public\ConfigHelper.cs" />
+    <Compile Include="XYSDoc\Public\CottageActivityManager.cs" />
+    <Compile Include="XYSDoc\Public\CusBtnStyleCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CusBtnStyleRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CustomerCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CustomerRadioBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CustomNumKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CustomNumKeyboard.Designer.cs">
+      <DependentUpon>CustomNumKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\CustomWaterTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\KeyboardManager.cs" />
+    <Compile Include="XYSDoc\Public\LoginInfo.cs" />
+    <Compile Include="XYSDoc\Public\MyPrinter.cs" />
+    <Compile Include="XYSDoc\Public\PatientRecordsManager.cs" />
+    <Compile Include="XYSDoc\Public\PrintManager.cs" />
+    <Compile Include="XYSDoc\Public\ProcessManager.cs" />
+    <Compile Include="XYSDoc\Public\QuestionnaireBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Public\QuestionnaireBaseForm.Designer.cs">
+      <DependentUpon>QuestionnaireBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Public\QuestionnaireCode.cs" />
+    <Compile Include="XYSDoc\Public\QuestionnaireResultDetail.cs" />
+    <Compile Include="XYSDoc\Public\QuestionnaireUserDetail.cs" />
+    <Compile Include="XYSDoc\Public\SaveXml.cs" />
+    <Compile Include="XYSDoc\Public\VM_Question.cs" />
+    <Compile Include="XYSDoc\QuitComfirmFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\QuitComfirmFrm.Designer.cs">
+      <DependentUpon>QuitComfirmFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\RegistStep1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\RegistStep1Form.Designer.cs">
+      <DependentUpon>RegistStep1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\RegistStep2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\RegistStep2Form.Designer.cs">
+      <DependentUpon>RegistStep2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\RegistStep3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\RegistStep3Form.Designer.cs">
+      <DependentUpon>RegistStep3Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\RegistSucess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\RegistSucess.Designer.cs">
+      <DependentUpon>RegistSucess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Security\DES.cs" />
+    <Compile Include="XYSDoc\XYSMainfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\XYSMainfrm.Designer.cs">
+      <DependentUpon>XYSMainfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\DaChangResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\DaChangResult.Designer.cs">
+      <DependentUpon>DaChangResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionA1.Designer.cs">
+      <DependentUpon>QuestionA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionB1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionB1.Designer.cs">
+      <DependentUpon>QuestionB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionC1.Designer.cs">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionC2.Designer.cs">
+      <DependentUpon>QuestionC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionD1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionD1.Designer.cs">
+      <DependentUpon>QuestionD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionE1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionE1.Designer.cs">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionE2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionE2.Designer.cs">
+      <DependentUpon>QuestionE2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionE3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionE3.Designer.cs">
+      <DependentUpon>QuestionE3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionF1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Dachang\QuestionF1.Designer.cs">
+      <DependentUpon>QuestionF1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\FeiaiResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\FeiaiResult.Designer.cs">
+      <DependentUpon>FeiaiResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionA1.Designer.cs">
+      <DependentUpon>QuestionA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionC1.Designer.cs">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionC2.Designer.cs">
+      <DependentUpon>QuestionC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionC3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionC3.Designer.cs">
+      <DependentUpon>QuestionC3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionE1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionE1.Designer.cs">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionF1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Feiai\QuestionF1.Designer.cs">
+      <DependentUpon>QuestionF1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\GanaiResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\GanaiResult.Designer.cs">
+      <DependentUpon>GanaiResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\QuestionC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\QuestionC1.Designer.cs">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\QuestionE1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\QuestionE1.Designer.cs">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\QuestionE2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\QuestionE2.Designer.cs">
+      <DependentUpon>QuestionE2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\QuestionF1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ganai\QuestionF1.Designer.cs">
+      <DependentUpon>QuestionF1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionA1.Designer.cs">
+      <DependentUpon>QuestionA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionA2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionA2.Designer.cs">
+      <DependentUpon>QuestionA2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionC1.Designer.cs">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionC2.Designer.cs">
+      <DependentUpon>QuestionC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionD1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionD1.Designer.cs">
+      <DependentUpon>QuestionD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionE1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionE1.Designer.cs">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionW1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionW1.Designer.cs">
+      <DependentUpon>QuestionW1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionW2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionW2.Designer.cs">
+      <DependentUpon>QuestionW2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionW3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionW3.Designer.cs">
+      <DependentUpon>QuestionW3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionW4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\QuestionW4.Designer.cs">
+      <DependentUpon>QuestionW4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\RuxianResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Ruxian\RuxianResult.Designer.cs">
+      <DependentUpon>RuxianResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\ScreeningZaoaiSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\ScreeningZaoaiSelect.Designer.cs">
+      <DependentUpon>ScreeningZaoaiSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionA1.Designer.cs">
+      <DependentUpon>QuestionA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionB1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionB1.Designer.cs">
+      <DependentUpon>QuestionB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionB2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionB2.Designer.cs">
+      <DependentUpon>QuestionB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionC1.Designer.cs">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionC2.Designer.cs">
+      <DependentUpon>QuestionC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionD1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionD1.Designer.cs">
+      <DependentUpon>QuestionD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionE1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionE1.Designer.cs">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionE2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionE2.Designer.cs">
+      <DependentUpon>QuestionE2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionF1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\QuestionF1.Designer.cs">
+      <DependentUpon>QuestionF1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\WeiAiResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XYSDoc\Zaoai\Weiai\WeiAiResultForm.Designer.cs">
+      <DependentUpon>WeiAiResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\SettingS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\SettingS.Designer.cs">
+      <DependentUpon>SettingS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\UserCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\UserCenter.Designer.cs">
+      <DependentUpon>UserCenter.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="窗体\GameThree.resx">
+      <DependentUpon>GameThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\GameTwo.resx">
+      <DependentUpon>GameTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\GameOne.resx">
+      <DependentUpon>GameOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\GymnasticForm.resx">
+      <DependentUpon>GymnasticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\GyNastic.resx">
+      <DependentUpon>GyNastic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\GynasticGame.resx">
+      <DependentUpon>GynasticGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\GynasticVideo.resx">
+      <DependentUpon>GynasticVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\MainFormOld.resx">
+      <DependentUpon>MainFormOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="窗体\QuestionareThree.resx">
+      <DependentUpon>QuestionareThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\QuestionareFour.resx">
+      <DependentUpon>QuestionareFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\QuestionareTwo.resx">
+      <DependentUpon>QuestionareTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\QuestionareOne.resx">
+      <DependentUpon>QuestionareOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\FirstFrm.resx">
+      <DependentUpon>FirstFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionEight.resx">
+      <DependentUpon>QuestionEight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionFive.resx">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionFourB.resx">
+      <DependentUpon>QuestionFourB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionFourC.resx">
+      <DependentUpon>QuestionFourC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionNine.resx">
+      <DependentUpon>QuestionNine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionSeven.resx">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionSix.resx">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\AD\Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\HistoryData\HistoryDataManager.resx">
+      <DependentUpon>HistoryDataManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Ankle\1.0\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Ankle\1.0\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Ankle\1.0\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Ankle\1.0\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Ankle\1.0\Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\JiZhu\QuestionFive.resx">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\JiZhu\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\JiZhu\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\JiZhu\QuestionSeven.resx">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\JiZhu\QuestionSix.resx">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\JiZhu\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\JiZhu\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\JiZhu\Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionEight.resx">
+      <DependentUpon>QuestionEight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionFive.resx">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionNine.resx">
+      <DependentUpon>QuestionNine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionSeven.resx">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionSix.resx">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionTen.resx">
+      <DependentUpon>QuestionTen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\LunYi\Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ScreeningSelect.resx">
+      <DependentUpon>ScreeningSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ShouShangZhi\QuestionFive.resx">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ShouShangZhi\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ShouShangZhi\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ShouShangZhi\QuestionSix.resx">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ShouShangZhi\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ShouShangZhi\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ShouShangZhi\Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Spine\QuestionFive.resx">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Spine\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Spine\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Spine\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Spine\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Spine\Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\Spine\SpineBaseForm.resx">
+      <DependentUpon>SpineBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionEight.resx">
+      <DependentUpon>QuestionEight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionFive.resx">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionNine.resx">
+      <DependentUpon>QuestionNine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionSeven.resx">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionSix.resx">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionTen.resx">
+      <DependentUpon>QuestionTen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Kangfu\ZuHuai\ResultForm.resx">
+      <DependentUpon>ResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\LoginFormNew.resx">
+      <DependentUpon>LoginFormNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\MainfrmConfirmSave.resx">
+      <DependentUpon>MainfrmConfirmSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\MDIMainForm.resx">
+      <DependentUpon>MDIMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\FirstFrm.resx">
+      <DependentUpon>FirstFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\QuestionFive.resx">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\QuestionSeven.resx">
+      <DependentUpon>QuestionSeven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\QuestionSix.resx">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Naocuzhong\RestulFrm.resx">
+      <DependentUpon>RestulFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\COPD\CopdOne.resx">
+      <DependentUpon>CopdOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\COPD\CopdResult.resx">
+      <DependentUpon>CopdResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\COPD\CopdThree.resx">
+      <DependentUpon>CopdThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\COPD\CopdTwo.resx">
+      <DependentUpon>CopdTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Diabetes\QuestionFive.resx">
+      <DependentUpon>QuestionFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Diabetes\QuestionFour.resx">
+      <DependentUpon>QuestionFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Diabetes\QuestionOne.resx">
+      <DependentUpon>QuestionOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Diabetes\QuestionSix.resx">
+      <DependentUpon>QuestionSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Diabetes\QuestionThree.resx">
+      <DependentUpon>QuestionThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Diabetes\QuestionTwo.resx">
+      <DependentUpon>QuestionTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Diabetes\Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\IPSS\IpssFive.resx">
+      <DependentUpon>IpssFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\IPSS\IpssFour.resx">
+      <DependentUpon>IpssFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\IPSS\IpssOne.resx">
+      <DependentUpon>IpssOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\IPSS\IpssResult.resx">
+      <DependentUpon>IpssResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\IPSS\IpssSix.resx">
+      <DependentUpon>IpssSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\IPSS\IpssThree.resx">
+      <DependentUpon>IpssThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\IPSS\IpssTwo.resx">
+      <DependentUpon>IpssTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\OAB\OabFour.resx">
+      <DependentUpon>OabFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\OAB\OabOne.resx">
+      <DependentUpon>OabOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\OAB\OabResult.resx">
+      <DependentUpon>OabResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\OAB\OabThree.resx">
+      <DependentUpon>OabThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\OAB\OabTwo.resx">
+      <DependentUpon>OabTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\Paruria\Paruria.resx">
+      <DependentUpon>Paruria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\ScreenOtherSelect.resx">
+      <DependentUpon>ScreenOtherSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\THAH\ThahFive.resx">
+      <DependentUpon>ThahFive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\THAH\ThahFour.resx">
+      <DependentUpon>ThahFour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\THAH\ThahOne.resx">
+      <DependentUpon>ThahOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\THAH\ThahResult.resx">
+      <DependentUpon>ThahResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\THAH\ThahSix.resx">
+      <DependentUpon>ThahSix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\THAH\ThahThree.resx">
+      <DependentUpon>ThahThree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Other\THAH\ThahTwo.resx">
+      <DependentUpon>ThahTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Player\WMPlayerForm.resx">
+      <DependentUpon>WMPlayerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Player\WMPlayerTest.resx">
+      <DependentUpon>WMPlayerTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Public\CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Public\CustomNumKeyboard.resx">
+      <DependentUpon>CustomNumKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Public\QuestionnaireBaseForm.resx">
+      <DependentUpon>QuestionnaireBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\QuitComfirmFrm.resx">
+      <DependentUpon>QuitComfirmFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\RegistStep1Form.resx">
+      <DependentUpon>RegistStep1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\RegistStep2Form.resx">
+      <DependentUpon>RegistStep2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\RegistStep3Form.resx">
+      <DependentUpon>RegistStep3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\RegistSucess.resx">
+      <DependentUpon>RegistSucess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\XYSMainfrm.resx">
+      <DependentUpon>XYSMainfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\DaChangResult.resx">
+      <DependentUpon>DaChangResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionA1.resx">
+      <DependentUpon>QuestionA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionB1.resx">
+      <DependentUpon>QuestionB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionC1.resx">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionC2.resx">
+      <DependentUpon>QuestionC2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionD1.resx">
+      <DependentUpon>QuestionD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionE1.resx">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionE2.resx">
+      <DependentUpon>QuestionE2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionE3.resx">
+      <DependentUpon>QuestionE3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Dachang\QuestionF1.resx">
+      <DependentUpon>QuestionF1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Feiai\FeiaiResult.resx">
+      <DependentUpon>FeiaiResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Feiai\QuestionA1.resx">
+      <DependentUpon>QuestionA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Feiai\QuestionC1.resx">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Feiai\QuestionC2.resx">
+      <DependentUpon>QuestionC2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Feiai\QuestionC3.resx">
+      <DependentUpon>QuestionC3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Feiai\QuestionE1.resx">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Feiai\QuestionF1.resx">
+      <DependentUpon>QuestionF1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ganai\GanaiResult.resx">
+      <DependentUpon>GanaiResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ganai\QuestionC1.resx">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ganai\QuestionE1.resx">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ganai\QuestionE2.resx">
+      <DependentUpon>QuestionE2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ganai\QuestionF1.resx">
+      <DependentUpon>QuestionF1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionA1.resx">
+      <DependentUpon>QuestionA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionA2.resx">
+      <DependentUpon>QuestionA2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionC1.resx">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionC2.resx">
+      <DependentUpon>QuestionC2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionD1.resx">
+      <DependentUpon>QuestionD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionE1.resx">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionW1.resx">
+      <DependentUpon>QuestionW1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionW2.resx">
+      <DependentUpon>QuestionW2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionW3.resx">
+      <DependentUpon>QuestionW3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\QuestionW4.resx">
+      <DependentUpon>QuestionW4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Ruxian\RuxianResult.resx">
+      <DependentUpon>RuxianResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\ScreeningZaoaiSelect.resx">
+      <DependentUpon>ScreeningZaoaiSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionA1.resx">
+      <DependentUpon>QuestionA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionB1.resx">
+      <DependentUpon>QuestionB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionB2.resx">
+      <DependentUpon>QuestionB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionC1.resx">
+      <DependentUpon>QuestionC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionC2.resx">
+      <DependentUpon>QuestionC2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionD1.resx">
+      <DependentUpon>QuestionD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionE1.resx">
+      <DependentUpon>QuestionE1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionE2.resx">
+      <DependentUpon>QuestionE2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\QuestionF1.resx">
+      <DependentUpon>QuestionF1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XYSDoc\Zaoai\Weiai\WeiAiResultForm.resx">
+      <DependentUpon>WeiAiResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\SettingS.resx">
+      <DependentUpon>SettingS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\UserCenter.resx">
+      <DependentUpon>UserCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="XYSDoc\lib\Sdtapi.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HeilsCare\HeilsCareLib.csproj">
+      <Project>{79649242-b508-44a3-864d-7adabf7c51c5}</Project>
+      <Name>HeilsCareLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XYS.Remp.Screening\XYS.Remp.Screening.csproj">
+      <Project>{474f3c05-612f-4711-a9b4-9dc9c93962bd}</Project>
+      <Name>XYS.Remp.Screening</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XYSDoc\lib\Dewlt.dll" />
+    <Content Include="XYSDoc\lib\JpgDll.dll" />
+    <Content Include="XYSDoc\lib\SavePhoto.dll" />
+    <Content Include="XYSDoc\lib\sdtapi.dll" />
+    <Content Include="XYSDoc\lib\sdtapi.h" />
+    <Content Include="XYSDoc\lib\System.Net.Http.dll" />
+    <Content Include="XYSDoc\lib\timuYueding.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XYSDoc\Other\Paruria\BPH\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
