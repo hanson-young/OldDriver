@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\User\Objects\HeilsCar.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\User\Objects\HeilsCar.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 69]: Last Updated: Wed Mar 22 21:27:30 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 69]: Last Updated: Thu Mar 23 10:20:06 2017
 <BR><P>
 <H3>Maximum Stack Usage =        336 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -800,13 +800,9 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 </UL>
 
-<P><STRONG><a name="[e5]"></a>ComMotor</STRONG> (Thumb, 86 bytes, Stack size 40 bytes, _serial.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ComMotor
-</UL>
-<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<P><STRONG><a name="[e5]"></a>ComMotor</STRONG> (Thumb, 86 bytes, Stack size 40 bytes, _serial.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
-</UL>
-<BR>[Called By]<UL><LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainTask
 </UL>
 
 <P><STRONG><a name="[e6]"></a>setDiffSpeed</STRONG> (Thumb, 484 bytes, Stack size 72 bytes, _diff.o(.text))
@@ -1869,12 +1865,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> _task.o(.data)
 </UL>
-<P><STRONG><a name="[19a]"></a>MainTask</STRONG> (Thumb, 472 bytes, Stack size 16 bytes, _task.o(.text))
+<P><STRONG><a name="[19a]"></a>MainTask</STRONG> (Thumb, 320 bytes, Stack size 16 bytes, _task.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 156 + Unknown Stack Size
 <LI>Call Chain = MainTask &rArr; LCD_WriteFloat &rArr; LCD_WriteInt &rArr; LCD_WriteString &rArr; LCD_WriteChar &rArr; LCD_ShowChar &rArr; LCD_DrawPoint &rArr; LCD_SetCursor
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDiffSpeed
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ComMotor
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Com_Puts
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetCursor

@@ -35,7 +35,7 @@ typedef struct
 sUSART_t usart_structs[] = 
 {// uartx		baudrate	gpiox 	tx			rx 		nvic_channel		PrePriority		SubPriority    IsRemap					PartialRemap
 
-			{1,			115200,			PB,		6,			7,		USART1_IRQn,			1,							0,					1,			GPIO_Remap_USART1					},
+			{1,			9600,			PB,		6,			7,		USART1_IRQn,			1,							0,					1,			GPIO_Remap_USART1					},
 //			{2,			115200,			PD,		5,			6,		USART2_IRQn,			1,							1,					1,			GPIO_Remap_USART2					},
 			{3,			19200,			PC,		10,			11,		USART3_IRQn,			1,							2,					1,			GPIO_PartialRemap_USART3	},
 //			{2,			115200,			PA,		2,		3,		USART2_IRQn,			1,							2,					0,			GPIO_PartialRemap_USART3	},

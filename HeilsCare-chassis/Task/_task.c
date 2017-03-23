@@ -123,21 +123,7 @@ void AutoTask(void *para)
 
 void LcdTask(void *para)
 {
-//	while(1)
-//	{
-		//LCD_Clear(WHITE);
-//		SetCursor(0,40);
-//		LCD_WriteString("GPS.y:");
-//		LCD_WriteFloat(GPS.position.x);
-//		SetCursor(0,70);
-//		LCD_WriteString("GPS.x:");
-//		LCD_WriteFloat(GPS.position.y);
-//		SetCursor(0,100);
-//		LCD_WriteString("GPS.a:");
-//		LCD_WriteFloat(GPS.radian);
-//		delay_ms(300);
-//	}
-		static struct Point end_point={500,0};
+	static struct Point end_point={500,0};
 	static double aim_angle=0;
   static double speed_max=500;
 
@@ -165,11 +151,12 @@ void LcdTask(void *para)
 
 
 extern u32 pc_cnt;
-void MainTask(void)
-{
 	u32 last_pc_cnt = 0;
 	u32 time_count = 0;
 	u8 time_out = 0;
+void MainTask(void)
+{
+
 	Ultrasonic[0].ClcUtralData(0);
  	Ultrasonic[1].ClcUtralData(1);
  	Ultrasonic[2].ClcUtralData(2);
@@ -177,9 +164,6 @@ void MainTask(void)
 	//test();
 	while(1)
 	{
-// 		USART_SendData(USART1, 0x55);
-// 		USART_SendData(USART2, 0x55);
-// 		USART_SendData(USART3, 0x55);
 		Data[5] = 0;
 		Data[6] = 0;
   	//PS2_key=PS2_DataKey();
@@ -189,42 +173,18 @@ void MainTask(void)
 		GPS.radian += 1;
    sprintf(SdTPC, "(%d,%d,%d,%d,1)\n", (int)GPS.position.x, (int)GPS.position.y, (int)GPS.radian, 100);
     Com_Puts(1, SdTPC);
-		ComMotor(3, ModbusCtrl, 8);
-		delay_ms(10);
-		ComMotor(3, ModbusEnable, 8);
-		delay_ms(10);
-		ComMotor(3, MotorEnable, 8);
-		delay_ms(10);
-		ComMotor(3, MotorSpeed, 8);
     SdTPC[0] = 0;
 		Speed_Rotation = (Data[5] - 0x80)* 4;
 		Speed_Y = (0x80 - Data[6])* 4;
-//		SetSpeed(100,100,100);
- 		//SetSpeed(PcData.speed_x.fl32*10,PcData.speed_y.fl32*10,PcData.speed_rot.fl32*10);
-				SetCursor(0,0);
-		LCD_WriteString("Speed_Y:");		
-		LCD_WriteFloat(Speed_Y);
-		SetCursor(0,20);
-		LCD_WriteString("Speed_Rotation:");		
-		LCD_WriteFloat(Speed_Rotation);
-		
-		SetCursor(0,40);
-		LCD_WriteString("speedx:");		
-		LCD_WriteFloat(PcData.speed_x.fl32); 
-		SetCursor(0,60);
+
+		SetCursor(0,0);
 		LCD_WriteString("speedy:");		
 		LCD_WriteFloat(PcData.speed_y.fl32);
-		SetCursor(0,80);
+		SetCursor(0,20);
 		LCD_WriteString("speedz:");		
 		LCD_WriteFloat(PcData.speed_rot.fl32);
 
-		SetCursor(0,100);
-		LCD_WriteString("r_left:");		
-		LCD_WriteFloat(r_now[0]);
-		SetCursor(0,120);
-		LCD_WriteString("r_right:");		
-		LCD_WriteFloat(r_now[1]);
-		//setDiffSpeed(PcData.speed_y.fl32 * 500,PcData.speed_x.fl32 * 500);
+		
 		if(pc_cnt == last_pc_cnt)
 		{
 			time_count++;
@@ -234,6 +194,7 @@ void MainTask(void)
 		else
 		{
 			time_count = 0;
+			time_out = 0;
 		}
 		if(time_out)
 		{
@@ -241,7 +202,7 @@ void MainTask(void)
 		}
 		else
 		{
-			setDiffSpeed(0,1000);
+			setDiffSpeed(PcData.speed_y.fl32,PcData.speed_rot.fl32);
 		}
 		last_pc_cnt = pc_cnt;
 		delay_ms(10);
