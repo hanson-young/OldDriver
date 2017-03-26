@@ -152,32 +152,32 @@ public class SerialControl : MonoBehaviour
                             if(iCount < 2)
                             {
                                 motorSpeed[iCount] = System.Convert.ToSingle(receiveData[iCount]);
-                                Debug.Log("Motor" + iCount + ":" + motorSpeed[iCount]);
+                                //Debug.Log("Motor" + iCount + ":" + motorSpeed[iCount]);
                             }
                             else if (iCount >= 2 && iCount < 6)
                             {
                                 collisionSwitch[iCount - 2] = System.Convert.ToBoolean(receiveData[iCount]);
-                                Debug.Log("Switch" + (iCount - 2) + ":" + collisionSwitch[iCount - 2]);
+                                //Debug.Log("Switch" + (iCount - 2) + ":" + collisionSwitch[iCount - 2]);
                             }
                             else if (iCount >= 6 && iCount < 12)
                             {
                                 InfraredRanging[iCount - 6] = System.Convert.ToSingle(receiveData[iCount]);
-                                Debug.Log("Infrared" + (iCount - 6) + ":" + InfraredRanging[iCount - 6]);
+                                //Debug.Log("Infrared" + (iCount - 6) + ":" + InfraredRanging[iCount - 6]);
                             }
                             else if (iCount >= 12 && iCount < 20)
                             {
                                 UltrasonicRanging[iCount - 12] = System.Convert.ToSingle(receiveData[iCount]);
-                                Debug.Log("Ultrasonic" + (iCount - 12) + ":" + UltrasonicRanging[iCount - 12]);
+                                //Debug.Log("Ultrasonic" + (iCount - 12) + ":" + UltrasonicRanging[iCount - 12]);
                             }
                             else if(iCount == 20)
                             {
                                 robotPower = System.Convert.ToInt32(receiveData[iCount]);
-                                Debug.Log("robotPower" + ":" + robotPower);
+                                //Debug.Log("robotPower" + ":" + robotPower);
                             }
                             else
                             {
                                 timeStamp = System.Convert.ToInt32(receiveData[iCount]);
-                                Debug.Log("timeStamp" + ":" + timeStamp);
+                                //Debug.Log("timeStamp" + ":" + timeStamp);
                             }
                         }
                     }
@@ -195,7 +195,6 @@ public class SerialControl : MonoBehaviour
                 Debug.Log("The serial port is not connected! Please check out serial port!");
             }
             Thread.Sleep(10);
-
         }
 
     }
