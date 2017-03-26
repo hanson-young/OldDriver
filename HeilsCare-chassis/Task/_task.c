@@ -26,6 +26,7 @@
 #include "../Driver/_ps2.h"
 #include "../Driver/_ultrasonic.h"
 #include "../Algorithm/_pid.h"
+#include "../Algorithm/_diff.h"
 
 #include "_ctiic.h"
 #include "_touch.h"
@@ -94,7 +95,6 @@ u8 ModbusEnable[8] = {0x02,0x06,0x00,0x00,0x00,0x01,0x48,0x39};
 u8 MotorEnable[8] = {0x02,0x06,0x00,0x01,0x00,0x01,0x19,0xf9};
 u8 MotorSpeed[8] = {0x02,0x06,0x00,0x02,0x00,0xff,0x68,0x79};
 extern PC_Data PcData;
-void setDiffSpeed(float speedTrans, float speedRot);
 extern int16_t r_now[2];
 
 
@@ -148,12 +148,50 @@ void LcdTask(void *para)
 		delay_ms(15);
 	}
 }
+int switchStatus[4] = {1,0,1,0};
+extern volatile u32 AdData[6]; 
+extern int timeStamp;
+void sendStr2Pc(void)
+{
+	int motorSpeed[2] = {0,0};
+	int collisionSwitch[4] = {1000000,0,0,0};
+	int InfraredRanging[6] = {0,0,0,0,0,0};
+	int UltrasonicRanging[8] = {0,0,0,0,0,0,0,0};
+	int robotPower = 96;
+	char sendCharBuff[100];
+	u8 iCount = 0;
 
+	motorSpeed[0] = leftSpeed;
+	motorSpeed[1] = rightSpeed;
+	for(iCount = 0; iCount < 4; iCount++)
+	{
+		collisionSwitch[iCount] = switchStatus[iCount];
+	}
+	
+	for(iCount = 0; iCount < 6; iCount++)
+	{
+		InfraredRanging[iCount] = AdData[iCount];
+	}
+	
+	for(iCount = 0; iCount < 8; iCount++)
+	{
+		UltrasonicRanging[iCount] = Ultrasonic[iCount].filterdistance;
+	}
+	
+	sprintf(sendCharBuff, "(%d %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d)\r\n", \
+	motorSpeed[0], motorSpeed[1], \
+	collisionSwitch[0], collisionSwitch[1], collisionSwitch[2], collisionSwitch[3],\
+	InfraredRanging[0], InfraredRanging[1], InfraredRanging[2], InfraredRanging[3], InfraredRanging[4], InfraredRanging[5],\
+	UltrasonicRanging[0], UltrasonicRanging[1], UltrasonicRanging[2], UltrasonicRanging[3], UltrasonicRanging[4], UltrasonicRanging[5], UltrasonicRanging[6], UltrasonicRanging[7],
+	robotPower,\
+	timeStamp);
+	Com_Puts(1, sendCharBuff);
+}
 
 extern u32 pc_cnt;
-	u32 last_pc_cnt = 0;
-	u32 time_count = 0;
-	u8 time_out = 0;
+u32 last_pc_cnt = 0;
+u32 time_count = 0;
+u8 time_out = 0;
 void MainTask(void)
 {
 
@@ -161,22 +199,11 @@ void MainTask(void)
  	Ultrasonic[1].ClcUtralData(1);
  	Ultrasonic[2].ClcUtralData(2);
  	Ultrasonic[3].ClcUtralData(3);
-	//test();
 	while(1)
 	{
-		Data[5] = 0;
-		Data[6] = 0;
-  	//PS2_key=PS2_DataKey();
-//		sprintf(SdTPC, "(%d,%d,%d,%d,1)\n\t", (int)10, (int)11, (int)12, 100);
 		GPS.position.x += 1;
 		GPS.position.y += 1;
 		GPS.radian += 1;
-   sprintf(SdTPC, "(%d,%d,%d,%d,1)\n", (int)GPS.position.x, (int)GPS.position.y, (int)GPS.radian, 100);
-    Com_Puts(1, SdTPC);
-    SdTPC[0] = 0;
-		Speed_Rotation = (Data[5] - 0x80)* 4;
-		Speed_Y = (0x80 - Data[6])* 4;
-
 		SetCursor(0,0);
 		LCD_WriteString("speedy:");		
 		LCD_WriteFloat(PcData.speed_y.fl32);
@@ -188,7 +215,7 @@ void MainTask(void)
 		if(pc_cnt == last_pc_cnt)
 		{
 			time_count++;
-			if(time_count > 50)
+			if(time_count > 20)
 				time_out = 1;
 		}
 		else
@@ -202,9 +229,11 @@ void MainTask(void)
 		}
 		else
 		{
+			sendStr2Pc();
 			setDiffSpeed(PcData.speed_y.fl32,PcData.speed_rot.fl32);
 		}
 		last_pc_cnt = pc_cnt;
 		delay_ms(10);
 	};
 }
+

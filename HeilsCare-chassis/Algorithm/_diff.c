@@ -21,11 +21,13 @@ static float wheelWidth = 636.6;//²îËÙÂÖ×óÓÒÂÖ¾à
 static float wheelLength = 636.2;//Ç°ºóÂÖ¾à
 static float wheelRadius = 50.0f;//²îËÙÂÖ°ë¾¶
 
+/*½ÇËÙ¶È*/
+float leftSpeed;
+float rightSpeed;
+
 void setDiffSpeed(float speedTrans, float speedRot)
 {
-	/*½ÇËÙ¶È*/
-	float leftSpeed;
-	float rightSpeed;
+
 	
 	float leftDelta;
 	float rightDelta;
@@ -79,7 +81,7 @@ void setDiffSpeed(float speedTrans, float speedRot)
 	else 
 		GPIOA ->BRR = GPIO_Pin_3;
 	delay_us(100);
-	
+
 	PWM_SetDuty(leftWheel.port,100 - pwmLeft);
  	PWM_SetDuty(rightWheel.port,100 - pwmRight);
 }

@@ -239,12 +239,13 @@ void USART1_IRQHandler(void)
   }
 }
 
-
+int timeStamp = 0;
 void TIM4_IRQHandler(void)
 {
 	u8 iCount = 0;
 	if(TIM_GetITStatus(TIM4,TIM_IT_Update) == SET)
 	{
+		timeStamp++;
 		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 		
 		for( ;iCount < ultrasonic_num; iCount++)

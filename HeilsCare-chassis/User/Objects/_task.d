@@ -53,6 +53,7 @@
 ..\User\Objects\_task.o: ..\Task\../Driver/_ps2.h
 ..\User\Objects\_task.o: ..\Task\../Driver/_ultrasonic.h
 ..\User\Objects\_task.o: ..\Task\../Algorithm/_pid.h
+..\User\Objects\_task.o: ..\Task\../Algorithm/_diff.h
 ..\User\Objects\_task.o: ..\Driver\_ctiic.h
 ..\User\Objects\_task.o: ..\Driver\_touch.h
 ..\User\Objects\_task.o: ..\Driver\_24cxx.h
