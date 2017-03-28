@@ -1,0 +1,95 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c81)
+    Vendor:   NVIDIA
+    VRAM:     2015 MB
+    Driver:   21.21.13.7653
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\ManagedWifi.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\ManagedWifi.dll into Unity Child Domain
+- Completed reload, in  0.181 seconds
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c81)
+    Vendor:   NVIDIA
+    VRAM:     2015 MB
+    Driver:   21.21.13.7653
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\ManagedWifi.dll (this message is harmless)
+Loading C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\ManagedWifi.dll into Unity Child Domain
+- Completed reload, in  0.029 seconds
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\snow\Desktop\GitHub\serialText_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.121843 ms
+name：HeilsCare
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+信号强度：100
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Open SerialPorts Successfully!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 42d4 -> priority: 1 
+Close Successfully!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ReadLine Error!Please check out serial port!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.NullReferenceException: Object reference not set to an instance of an object
+  at System.IO.Ports.SerialPort.read_byte () [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPort.ReadTo (System.String value) [0x00000] in <filename unknown>:0 
+  at System.IO.Ports.SerialPort.ReadLine () [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.Ports.SerialPort:ReadLine ()
+  at SerialControl.serialData () [0x00000] in <filename unknown>:0 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+

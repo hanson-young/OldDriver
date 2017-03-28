@@ -39,7 +39,7 @@ namespace heilsCarController
             this.speedy = 0.0f;
             this.speedz = 0.0f;
             SendStringData(sPort);
-            //ReceiveData();
+            ReceiveData();
             sendBox.Text = "(" + ((float)this.speedx).ToString() + "," + ((float)this.speedy).ToString() + "," + ((float)this.speedz).ToString() + ")";
 
         }
@@ -121,6 +121,7 @@ namespace heilsCarController
                 //{
                 //    a[iCount] = Convert.ToInt32(match[iCount].ToString());
                 //}
+                Thread.Sleep(20);
 
             }
 

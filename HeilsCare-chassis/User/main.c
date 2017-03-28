@@ -59,7 +59,7 @@ void QEI_Init(void);
  	POINT_COLOR=RED;//设置字体为红色 
 	LCD_ShowString(60,50,200,16,16,"HeilsCar");	
 	LCD_ShowString(60,110,200,16,16,"2016-8-7");
-	 adcinit();
+	adcinit();
 	delay_ms(1500);
 LCD_Clear(WHITE);	
 //	SetSpeed(0,0,100);

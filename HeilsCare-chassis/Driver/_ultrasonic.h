@@ -29,6 +29,7 @@ struct Ultrasonic
 	void  (*Ultrafilter)(unsigned char parg);
 };
 void bubble_sort(float a[], u8 n);
+void GetUltrasonic(void);
 extern struct Ultrasonic Ultrasonic[];
 extern unsigned char ultrasonic_num;
 #define TOTAL 11

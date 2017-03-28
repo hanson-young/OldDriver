@@ -18,14 +18,14 @@
 sIO_t io_structs[] = 
 {// io_type		gpiox			pinx 		trigger_type			nvic_channel 		PrePriority		SubPriority
 //超声波外部中断IO配置信息（配合定时器完成高电平的测量）
-		{INPUT,			PC,			 0,					0xFF,					0xFF,		  			0xFF,					0xFF			},
-		{INPUT,			PC,			 1,					0xFF,					0xFF,		  			0xFF,					0xFF			},
-		{INPUT,			PC,			 2,					0xFF,					0xFF,		  			0xFF,					0xFF			},
-		{INPUT,			PC,			 3,					0xFF,					0xFF,		  			0xFF,					0xFF			},
-		{INPUT,			PF,			 0,					0xFF,					0xFF,		  			0xFF,					0xFF			},
-		{INPUT,			PF,			 1,					0xFF,					0xFF,		  			0xFF,					0xFF			},
-		{INPUT,			PF,			 2,					0xFF,					0xFF,		  			0xFF,					0xFF			},
-		{INPUT,			PF,			 3,					0xFF,					0xFF,		  			0xFF,					0xFF			},
+		{INPUT_TRIG,			PC,			 0,					0x08,					EXTI0_IRQn,		  			2,					1			},
+		{INPUT_TRIG,			PC,			 1,					0x08,					EXTI1_IRQn,		  			2,					2			},
+		{INPUT_TRIG,			PC,			 2,					0x08,					EXTI2_IRQn,		  			2,					3			},
+		{INPUT_TRIG,			PC,			 3,					0x08,					EXTI3_IRQn,		  			2,					4			},
+		{INPUT_TRIG,			PF,			 0,					0x08,					EXTI0_IRQn,		  			2,					1			},
+		{INPUT_TRIG,			PF,			 1,					0x08,					EXTI1_IRQn,		  			2,					2			},
+		{INPUT_TRIG,			PF,			 2,					0x08,					EXTI2_IRQn,		  			2,					3			},
+		{INPUT_TRIG,			PF,			 3,					0x08,					EXTI3_IRQn,		  			2,					4			},
 
 //超声波触发信号配置信息
 		{OUTPUT,		PF,			 4,				0xFF,					0xFF,		  	0xFF,					0xFF			},

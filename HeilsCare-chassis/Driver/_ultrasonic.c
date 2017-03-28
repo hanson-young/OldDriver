@@ -38,7 +38,7 @@ struct Ultrasonic Ultrasonic[] =
 		.GPIO_OUT								= GPIOD,
 		.Pin_Out								= GPIO_Pin_12,
 
-		.trigfactor 						= 0.017,//340 / 2 / 10000,
+		.trigfactor 						= 0.0085,//340 / 2 / 10000,
 		.distance 							=	0.0f,
 		.IsStop 								= 1,
 		.threthold 							= 200,
@@ -58,7 +58,7 @@ struct Ultrasonic Ultrasonic[] =
 		.GPIO_OUT								= GPIOD,
 		.Pin_Out								= GPIO_Pin_13,
 
-		.trigfactor 						= 0.017,
+		.trigfactor 						= 0.0085,
 		.distance 							=	0.0f,
 		.IsStop 								= 1,
 		.threthold 							= 200,
@@ -78,7 +78,7 @@ struct Ultrasonic Ultrasonic[] =
 		.GPIO_OUT								= GPIOD,
 		.Pin_Out								= GPIO_Pin_14,
 
-		.trigfactor 						= 0.017,
+		.trigfactor 						= 0.0085,
 		.distance 							=	0.0f,
 		.IsStop 								= 1,
 		.threthold 							= 200,
@@ -98,7 +98,7 @@ struct Ultrasonic Ultrasonic[] =
 		.GPIO_OUT								= GPIOD,
 		.Pin_Out								= GPIO_Pin_15,
 
-		.trigfactor 						= 0.017,
+		.trigfactor 						= 0.0085,
 		.distance 							=	0.0f,
 		.IsStop 								= 1,
 		.threthold 							= 200,
@@ -118,7 +118,7 @@ struct Ultrasonic Ultrasonic[] =
 		.GPIO_OUT								= GPIOF,
 		.Pin_Out								= GPIO_Pin_4,
 
-		.trigfactor 						= 0.017,
+		.trigfactor 						= 0.0085,
 		.distance 							=	0.0f,
 		.IsStop 								= 1,
 		.threthold 							= 200,
@@ -138,7 +138,7 @@ struct Ultrasonic Ultrasonic[] =
 		.GPIO_OUT								= GPIOF,
 		.Pin_Out								= GPIO_Pin_5,
 
-		.trigfactor 						= 0.017,
+		.trigfactor 						= 0.0085,
 		.distance 							=	0.0f,
 		.IsStop 								= 1,
 		.threthold 							= 200,
@@ -158,7 +158,7 @@ struct Ultrasonic Ultrasonic[] =
 		.GPIO_OUT								= GPIOF,
 		.Pin_Out								= GPIO_Pin_6,
 
-		.trigfactor 						= 0.017,
+		.trigfactor 						= 0.0085,
 		.distance 							=	0.0f,
 		.IsStop 								= 1,
 		.threthold 							= 200,
@@ -178,7 +178,7 @@ struct Ultrasonic Ultrasonic[] =
 		.GPIO_OUT								= GPIOF,
 		.Pin_Out								= GPIO_Pin_7,
 
-		.trigfactor 						= 0.017,
+		.trigfactor 						= 0.0085,
 		.distance 							=	0.0f,
 		.IsStop 								= 1,
 		.threthold 							= 200,
@@ -213,50 +213,10 @@ static void ClcUtralData(unsigned char parg)
 static void UtralMea(unsigned char parg)
 {
 	
-	int timeout = 0;
 	Ultrasonic[parg].GPIO_OUT -> BSRR = Ultrasonic[parg].Pin_Out;
-	delay_ms(10);
+	delay_us(10);
 	Ultrasonic[parg].GPIO_OUT -> BRR = Ultrasonic[parg].Pin_Out;
-	
-	/*等待回响信号*/
-
-	while(GPIO_ReadInputDataBit(Ultrasonic[parg].GPIO_IN,Ultrasonic[parg].Pin_In) == RESET)
-	{
-		delay_us(1);
-		timeout++;
-		if(timeout > 100000)
-		{
-			timeout = 0;
-			return;
-		}
-	}
-	timeout = 0;
-	TIM_Cmd(TIM4,ENABLE);
-	//回响信号到来，开启定时器计数
-	Ultrasonic[parg].IsStart = 0x01;
-	while(GPIO_ReadInputDataBit(Ultrasonic[parg].GPIO_IN,Ultrasonic[parg].Pin_In) == SET)
-	{
-		delay_us(1);
-		timeout++;
-		if(timeout > 30000)
-		{
-			timeout = 0;
-			return;
-		}
-	}
-	//回响信号消失
-	TIM_Cmd(TIM4,DISABLE);
-	//关闭定时器
-
-	Ultrasonic[parg].cnt = TIM4->CNT;
-	//获取计TIM2数寄存器中的计数值，一边计算回响信号时间
-	Ultrasonic[parg].trig_time = Ultrasonic[parg].cnt + Ultrasonic[parg].trig_count * 399;
-	Ultrasonic[parg].distance = (float)Ultrasonic[parg].trig_time * Ultrasonic[parg].trigfactor;
-	//通过回响信号计算距离
-	TIM4->CNT = 0;  //将TIM2计数寄存器的计数值清零
-	Ultrasonic[parg].IsStart = 0x00;	
-	Ultrasonic[parg].trig_count = 0;  //中断溢出次数清零
-	delay_ms(10);
+	Ultrasonic[parg].IsStart = 1;
 }
 
 /************************************************************************
@@ -321,22 +281,14 @@ void bubble_sort(float a[], u8 n)
 	}
 }
 
-
-//  		Ultrasonic[0].UtralMea(0);
-// 		Ultrasonic[0].Ultrafilter(0);
-//  		Ultrasonic[1].UtralMea(1);
-// 		Ultrasonic[1].Ultrafilter(1);
-//  		Ultrasonic[2].UtralMea(2);
-// 		Ultrasonic[2].Ultrafilter(2);
-//  		Ultrasonic[3].UtralMea(3);
-// 		Ultrasonic[3].Ultrafilter(3);
-// 		 		Ultrasonic[4].UtralMea(4);
-// 		Ultrasonic[4].Ultrafilter(4);
-// 		 		Ultrasonic[5].UtralMea(5);
-// 		Ultrasonic[5].Ultrafilter(5);
-// 		 		Ultrasonic[6].UtralMea(6);
-// 		Ultrasonic[6].Ultrafilter(6);
-// 		 		Ultrasonic[7].UtralMea(7);
-// 		Ultrasonic[7].Ultrafilter(7);
+void GetUltrasonic(void)
+{
+	int i = 0;
+	for(;i < 8; i++)
+	{
+ 		Ultrasonic[i].UtralMea(i);
+		Ultrasonic[i].Ultrafilter(i);
+	}
+}
 
 /******************* (C) COPYRIGHT 2016 Heils *****END OF FILE****/

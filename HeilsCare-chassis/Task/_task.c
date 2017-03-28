@@ -175,7 +175,7 @@ void sendStr2Pc(void)
 	
 	for(iCount = 0; iCount < 8; iCount++)
 	{
-		UltrasonicRanging[iCount] = Ultrasonic[iCount].filterdistance;
+		UltrasonicRanging[iCount] = Ultrasonic[iCount].distance;
 	}
 	
 	sprintf(sendCharBuff, "(%d %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d)\r\n", \
@@ -194,16 +194,9 @@ u32 time_count = 0;
 u8 time_out = 0;
 void MainTask(void)
 {
-
-	Ultrasonic[0].ClcUtralData(0);
- 	Ultrasonic[1].ClcUtralData(1);
- 	Ultrasonic[2].ClcUtralData(2);
- 	Ultrasonic[3].ClcUtralData(3);
 	while(1)
 	{
-		GPS.position.x += 1;
-		GPS.position.y += 1;
-		GPS.radian += 1;
+		GetUltrasonic();
 		SetCursor(0,0);
 		LCD_WriteString("speedy:");		
 		LCD_WriteFloat(PcData.speed_y.fl32);

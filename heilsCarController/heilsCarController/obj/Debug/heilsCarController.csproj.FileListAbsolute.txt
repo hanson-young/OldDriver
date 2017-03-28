@@ -18,3 +18,11 @@ C:\Users\snow\Desktop\unity3d_test\heilsCarController\heilsCarController\obj\Deb
 C:\Users\snow\Desktop\unity3d_test\heilsCarController\heilsCarController\obj\Debug\heilsCarController.Properties.Resources.resources
 C:\Users\snow\Desktop\unity3d_test\heilsCarController\heilsCarController\obj\Debug\heilsCarController.csproj.GenerateResource.Cache
 C:\Users\snow\Desktop\unity3d_test\heilsCarController\heilsCarController\obj\Debug\heilsCarController.exe.licenses
+C:\Users\snow\Desktop\GitHub\heilsCarController\heilsCarController\bin\Debug\heilsCarController.exe.config
+C:\Users\snow\Desktop\GitHub\heilsCarController\heilsCarController\obj\Debug\heilsCarController.exe
+C:\Users\snow\Desktop\GitHub\heilsCarController\heilsCarController\obj\Debug\heilsCarController.pdb
+C:\Users\snow\Desktop\GitHub\heilsCarController\heilsCarController\obj\Debug\heilsCarController.csprojResolveAssemblyReference.cache
+C:\Users\snow\Desktop\GitHub\heilsCarController\heilsCarController\obj\Debug\heilsCarController.Form1.resources
+C:\Users\snow\Desktop\GitHub\heilsCarController\heilsCarController\obj\Debug\heilsCarController.Properties.Resources.resources
+C:\Users\snow\Desktop\GitHub\heilsCarController\heilsCarController\obj\Debug\heilsCarController.csproj.GenerateResource.Cache
+C:\Users\snow\Desktop\GitHub\heilsCarController\heilsCarController\obj\Debug\heilsCarController.exe.licenses

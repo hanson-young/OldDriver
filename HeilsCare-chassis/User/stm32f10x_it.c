@@ -245,14 +245,28 @@ void TIM4_IRQHandler(void)
 	u8 iCount = 0;
 	if(TIM_GetITStatus(TIM4,TIM_IT_Update) == SET)
 	{
-		timeStamp++;
 		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
-		
+		timeStamp++;
 		for( ;iCount < ultrasonic_num; iCount++)
 		{
-			if(Ultrasonic[iCount].IsStart == 0x01)
+			if(Ultrasonic[iCount].IsStart == 0x02)
 			{
-				Ultrasonic[iCount].trig_count++;
+				if(Ultrasonic[iCount].GPIO_IN->IDR & Ultrasonic[iCount].Pin_In)
+					Ultrasonic[iCount].trig_time++;
+				else
+				{
+					Ultrasonic[iCount].IsStart = 0;
+					//计算得到距离
+					Ultrasonic[iCount].distance = Ultrasonic[iCount].trigfactor * (Ultrasonic[iCount].trig_time * 99 + TIM4->CNT - Ultrasonic[iCount].cnt);
+					Ultrasonic[iCount].trig_time = 0;
+					Ultrasonic[iCount].cnt = 0;
+					//如果距离小于阈值，则停车
+					if(Ultrasonic[iCount].distance <= Ultrasonic[iCount].threthold)
+					{
+//						SetSpeed(0,0,0);
+						Ultrasonic[iCount].IsStop = 1;
+					}
+				}
 			}
 		}
 	}
@@ -262,30 +276,86 @@ void TIM4_IRQHandler(void)
 void EXTI0_IRQHandler(void)
 {
 	EXTI->PR = EXTI_Line0;//PC0
-// 	if(Ultrasonic[0].IsStart == 0x01)
-// 	Ultrasonic[0].IsStart = 0x02;
+	if(Ultrasonic[0].GPIO_IN->IDR & Ultrasonic[0].Pin_In)
+	{
+		if(Ultrasonic[0].IsStart == 0x01)
+		{
+			Ultrasonic[0].cnt = TIM4->CNT;
+		}
+		Ultrasonic[0].IsStart = 0x02;
+	}
+	if(Ultrasonic[4].GPIO_IN->IDR & Ultrasonic[4].Pin_In)
+	{
+		if(Ultrasonic[4].IsStart == 0x01)
+		{
+			Ultrasonic[4].cnt = TIM4->CNT;
+		}
+		Ultrasonic[4].IsStart = 0x02;
+	}
+
 }
 
 void EXTI1_IRQHandler(void)
 {
 	EXTI->PR = EXTI_Line1;//PC1
-// 	if(Ultrasonic[1].IsStart == 0x01)
-// 	Ultrasonic[1].IsStart = 0x02;
-
+	if(Ultrasonic[1].GPIO_IN->IDR & Ultrasonic[1].Pin_In)
+	{
+		if(Ultrasonic[1].IsStart == 0x01)
+		{
+			Ultrasonic[1].cnt = TIM4->CNT;
+		}
+		Ultrasonic[1].IsStart = 0x02;
+	}
+	if(Ultrasonic[5].GPIO_IN->IDR & Ultrasonic[5].Pin_In)
+	{
+		if(Ultrasonic[5].IsStart == 0x01)
+		{
+			Ultrasonic[5].cnt = TIM4->CNT;
+		}
+		Ultrasonic[5].IsStart = 0x02;
+	}
 }
 
 void EXTI2_IRQHandler(void)
 {
 	EXTI->PR = EXTI_Line2;//PC2
-// 	if(Ultrasonic[2].IsStart == 0x01)
-// 	Ultrasonic[2].IsStart = 0x02;
+	if(Ultrasonic[2].GPIO_IN->IDR & Ultrasonic[2].Pin_In)
+	{
+		if(Ultrasonic[2].IsStart == 0x01)
+		{
+			Ultrasonic[2].cnt = TIM4->CNT;
+		}
+		Ultrasonic[2].IsStart = 0x02;
+	}
+	if(Ultrasonic[6].GPIO_IN->IDR & Ultrasonic[6].Pin_In)
+	{
+		if(Ultrasonic[6].IsStart == 0x01)
+		{
+			Ultrasonic[6].cnt = TIM4->CNT;
+		}
+		Ultrasonic[6].IsStart = 0x02;
+	}
 }
 
 void EXTI3_IRQHandler(void)
 {
-	 EXTI->PR = EXTI_Line3;////PC3
-// 	 if(Ultrasonic[3].IsStart == 0x01)
-// 	 Ultrasonic[3].IsStart = 0x02;
+	EXTI->PR = EXTI_Line3;////PC3
+	if(Ultrasonic[3].GPIO_IN->IDR & Ultrasonic[3].Pin_In)
+	{
+		if(Ultrasonic[3].IsStart == 0x01)
+		{
+			Ultrasonic[3].cnt = TIM4->CNT;
+		}
+		Ultrasonic[3].IsStart = 0x02;
+	}
+	if(Ultrasonic[7].GPIO_IN->IDR & Ultrasonic[7].Pin_In)
+	{
+		if(Ultrasonic[7].IsStart == 0x01)
+		{
+			Ultrasonic[7].cnt = TIM4->CNT;
+		}
+		Ultrasonic[7].IsStart = 0x02;
+	}
 }
 ////////////////////////////////////////////////////////////////
 void EXTI4_IRQHandler(void)//PB4

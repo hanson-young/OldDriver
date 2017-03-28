@@ -1,0 +1,9 @@
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\bin\Debug\SerialControl.exe.config
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\obj\Debug\SerialControl.Properties.Resources.resources
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\obj\Debug\SerialControl.csproj.GenerateResource.Cache
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\bin\Debug\SerialControl.exe
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\bin\Debug\SerialControl.pdb
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\obj\Debug\SerialControl.Form1.resources
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\obj\Debug\SerialControl.exe
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\obj\Debug\SerialControl.pdb
+C:\Users\snow\Desktop\GitHub\heilsCarController\SerialControl\obj\Debug\SerialControl.csprojResolveAssemblyReference.cache
