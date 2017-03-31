@@ -18,10 +18,11 @@ public class wifiControl : MonoBehaviour {
     public string wifiName = "HeilsCare";
     public string passWord = "hske8888";
     private string wifiXml = "";
-    public void ScanWifi()
+    public uint wlanSignalQuality = 0;
+    WlanClient client;
+    public void ConnectWifi()
     {
         bool wifiInList = false;
-        WlanClient client = new WlanClient();
         try
         {
             foreach (WlanClient.WlanInterface wlanIface in client.Interfaces)
@@ -53,7 +54,7 @@ public class wifiControl : MonoBehaviour {
                 if (wifiInList)
                 {
                     // Connects to a known network with WEP security
-                    if (wlanIface.InterfaceState == Wlan.WlanInterfaceState.Disconnected)
+                    if (wlanIface.InterfaceState == Wlan.WlanInterfaceState.Disconnected || wlanIface.CurrentConnection.profileName != wifiName)
                     {
                         string profileName = wifiName; // this is also the SSID
                         string mac = StringToHex(profileName);
@@ -67,7 +68,8 @@ public class wifiControl : MonoBehaviour {
                     {
                         Debug.Log(wifiName + " has connected!");
                         Debug.Log("name：" + wlanIface.CurrentConnection.profileName);
-                        Debug.Log("信号强度：" + wlanIface.CurrentConnection.wlanAssociationAttributes.wlanSignalQuality);
+                        wlanSignalQuality = wlanIface.CurrentConnection.wlanAssociationAttributes.wlanSignalQuality;
+                        Debug.Log("信号强度：" + wlanSignalQuality);
                     }
                 }
                 else
@@ -97,11 +99,12 @@ public class wifiControl : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        ScanWifi();
+        client = new WlanClient();
+        ConnectWifi();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        ConnectWifi();
 	}
 }
