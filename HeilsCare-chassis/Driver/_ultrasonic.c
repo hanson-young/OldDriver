@@ -128,66 +128,66 @@ struct Ultrasonic Ultrasonic[] =
 		.UtralMea 							= UtralMea,
 		.Ultrafilter            = Ultrafilter,
 	},
-		{
-		.Id 										= 0x05,
-		.trig_time   						= 0,
-		.cnt                    = 0,
-	  .trig_count							= 0,
-		.GPIO_IN								= GPIOF,
-		.Pin_In 								= GPIO_Pin_1,
-		.GPIO_OUT								= GPIOF,
-		.Pin_Out								= GPIO_Pin_5,
+//		{
+//		.Id 										= 0x05,
+//		.trig_time   						= 0,
+//		.cnt                    = 0,
+//	  .trig_count							= 0,
+//		.GPIO_IN								= GPIOF,
+//		.Pin_In 								= GPIO_Pin_1,
+//		.GPIO_OUT								= GPIOF,
+//		.Pin_Out								= GPIO_Pin_5,
 
-		.trigfactor 						= 0.0085,
-		.distance 							=	0.0f,
-		.IsStop 								= 1,
-		.threthold 							= 200,
-		.IsStart 								= 0,
-		.filterdistance         = 0,
-		.ClcUtralData 					= ClcUtralData,
-		.UtralMea 							= UtralMea,
-		.Ultrafilter            = Ultrafilter,
-	},
-		{
-		.Id 										= 0x06,
-		.trig_time   						= 0,
-		.cnt                    = 0,
-	  .trig_count							= 0,
-		.GPIO_IN								= GPIOF,
-		.Pin_In 								= GPIO_Pin_2,
-		.GPIO_OUT								= GPIOF,
-		.Pin_Out								= GPIO_Pin_6,
+//		.trigfactor 						= 0.0085,
+//		.distance 							=	0.0f,
+//		.IsStop 								= 1,
+//		.threthold 							= 200,
+//		.IsStart 								= 0,
+//		.filterdistance         = 0,
+//		.ClcUtralData 					= ClcUtralData,
+//		.UtralMea 							= UtralMea,
+//		.Ultrafilter            = Ultrafilter,
+//	},
+//		{
+//		.Id 										= 0x06,
+//		.trig_time   						= 0,
+//		.cnt                    = 0,
+//	  .trig_count							= 0,
+//		.GPIO_IN								= GPIOF,
+//		.Pin_In 								= GPIO_Pin_2,
+//		.GPIO_OUT								= GPIOF,
+//		.Pin_Out								= GPIO_Pin_6,
 
-		.trigfactor 						= 0.0085,
-		.distance 							=	0.0f,
-		.IsStop 								= 1,
-		.threthold 							= 200,
-		.IsStart 								= 0,
-		.filterdistance         = 0,
-		.ClcUtralData 					= ClcUtralData,
-		.UtralMea 							= UtralMea,
-		.Ultrafilter            = Ultrafilter,
-	},
-		{
-		.Id 										= 0x07,
-		.trig_time   						= 0,
-		.cnt                    = 0,
-	  .trig_count							= 0,
-		.GPIO_IN								= GPIOF,
-		.Pin_In 								= GPIO_Pin_3,
-		.GPIO_OUT								= GPIOF,
-		.Pin_Out								= GPIO_Pin_7,
+//		.trigfactor 						= 0.0085,
+//		.distance 							=	0.0f,
+//		.IsStop 								= 1,
+//		.threthold 							= 200,
+//		.IsStart 								= 0,
+//		.filterdistance         = 0,
+//		.ClcUtralData 					= ClcUtralData,
+//		.UtralMea 							= UtralMea,
+//		.Ultrafilter            = Ultrafilter,
+//	},
+//		{
+//		.Id 										= 0x07,
+//		.trig_time   						= 0,
+//		.cnt                    = 0,
+//	  .trig_count							= 0,
+//		.GPIO_IN								= GPIOF,
+//		.Pin_In 								= GPIO_Pin_3,
+//		.GPIO_OUT								= GPIOF,
+//		.Pin_Out								= GPIO_Pin_7,
 
-		.trigfactor 						= 0.0085,
-		.distance 							=	0.0f,
-		.IsStop 								= 1,
-		.threthold 							= 200,
-		.IsStart 								= 0,
-		.filterdistance         = 0,
-		.ClcUtralData 					= ClcUtralData,
-		.UtralMea 							= UtralMea,
-		.Ultrafilter            = Ultrafilter,
-	},
+//		.trigfactor 						= 0.0085,
+//		.distance 							=	0.0f,
+//		.IsStop 								= 1,
+//		.threthold 							= 200,
+//		.IsStart 								= 0,
+//		.filterdistance         = 0,
+//		.ClcUtralData 					= ClcUtralData,
+//		.UtralMea 							= UtralMea,
+//		.Ultrafilter            = Ultrafilter,
+//	},
 };
 
 unsigned char ultrasonic_num = sizeof(Ultrasonic)/sizeof(Ultrasonic[0]);
@@ -226,8 +226,8 @@ static void UtralMea(unsigned char parg)
  *  @return:
  ************************************************************************/ 
 static int l_cnt = 0;
-static float distanceDataIn[8][TOTAL] = {0};
-static float distanceDataTmp[8][TOTAL] = {0};
+static float distanceDataIn[ultraTotalNum][TOTAL] = {0};
+static float distanceDataTmp[ultraTotalNum][TOTAL] = {0};
 static int m_cnt = 0;
 static float distanceSum = 0;
 static void Ultrafilter(unsigned char parg)
@@ -284,7 +284,7 @@ void bubble_sort(float a[], u8 n)
 void GetUltrasonic(void)
 {
 	int i = 0;
-	for(;i < 8; i++)
+	for(;i < ultraTotalNum; i++)
 	{
  		Ultrasonic[i].UtralMea(i);
 		Ultrasonic[i].Ultrafilter(i);

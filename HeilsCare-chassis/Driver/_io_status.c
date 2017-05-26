@@ -22,10 +22,10 @@ sIO_t io_structs[] =
 		{INPUT_TRIG,			PC,			 1,					0x08,					EXTI1_IRQn,		  			2,					2			},
 		{INPUT_TRIG,			PC,			 2,					0x08,					EXTI2_IRQn,		  			2,					3			},
 		{INPUT_TRIG,			PC,			 3,					0x08,					EXTI3_IRQn,		  			2,					4			},
-		{INPUT_TRIG,			PF,			 0,					0x08,					EXTI0_IRQn,		  			2,					1			},
-		{INPUT_TRIG,			PF,			 1,					0x08,					EXTI1_IRQn,		  			2,					2			},
-		{INPUT_TRIG,			PF,			 2,					0x08,					EXTI2_IRQn,		  			2,					3			},
-		{INPUT_TRIG,			PF,			 3,					0x08,					EXTI3_IRQn,		  			2,					4			},
+//		{INPUT_TRIG,			PF,			 0,					0x08,					EXTI0_IRQn,		  			2,					5			},
+//		{INPUT_TRIG,			PF,			 1,					0x08,					EXTI1_IRQn,		  			2,					6			},
+//		{INPUT_TRIG,			PF,			 2,					0x08,					EXTI2_IRQn,		  			2,					3			},
+//		{INPUT_TRIG,			PF,			 3,					0x08,					EXTI3_IRQn,		  			2,					4			},
 
 //超声波触发信号配置信息
 		{OUTPUT,		PF,			 4,				0xFF,					0xFF,		  	0xFF,					0xFF			},
@@ -33,15 +33,22 @@ sIO_t io_structs[] =
 		{OUTPUT,		PF,			 6,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 		{OUTPUT,		PF,			 7,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 
+		
+		
 		{OUTPUT,		PD,			 12,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 		{OUTPUT,		PD,			 13,				0xFF,					0xFF,		  	0xFF,					0xFF		  },
 		{OUTPUT,		PD,			 14,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 		{OUTPUT,		PD,			 15,				0xFF,					0xFF,		  	0xFF,					0xFF			},
+		
+//电机方向信号
+//		{OUTPUT,		PA,			 0,				0xFF,					0xFF,		  	0xFF,					0xFF			},
+//		{OUTPUT,		PA,			 1,				0xFF,					0xFF,		  	0xFF,					0xFF			},	
+		
 //电机方向信号
 		{OUTPUT,		PA,			 2,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 		{OUTPUT,		PA,			 3,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 //灯带
-		{OUTPUT,		PA,			 8,				0xFF,					0xFF,		  	0xFF,					0xFF			},
+		{OUTPUT,		PA,			 1,				0xFF,					0xFF,		  	0xFF,					0xFF			},
 //防撞条IO触发配置信息
 
 		{INPUT_TRIG,			PF,			 12,					0x0C,					EXTI15_10_IRQn,		  		4,					1			},

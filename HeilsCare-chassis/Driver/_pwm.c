@@ -29,15 +29,15 @@ typedef struct
 /*配置PWM波结构体数据库*/
 sPWM_t pwm_structs[] = 
 {// clk_freq		pwm_freq	timx 	chx		gpiox 	pinx
-  /*底盘电机*/
+  /*左边底盘电机*/
 	{1000000, 		1000, 		2, 		1, 		PA, 	0	},
-	{1000000, 		1000, 		2, 		2, 		PA, 	1	},
+//	{1000000, 		1000, 		2, 		2, 		PA, 	1	},
 // 	{1000000, 		1000, 		2, 		3, 		PA, 	2	},//用作控制管脚
 // 	{1000000, 		1000, 		2, 		4, 		PA, 	3	},//用作控制管脚
-	/*上层电机*/
+	/*右边上层电机*/
 // 	{1000000, 		100, 		3, 		1, 		PA, 	6	},
 // 	{1000000, 		100, 		3, 		2, 		PA, 	7	},
-// 	{1000000, 		100, 		3, 		3, 		PB, 	0	},
+ 	{1000000, 		100, 		3, 		3, 		PB, 	0	},
 // 	{1000000, 		100, 		3, 		4, 		PB, 	1	},
 	/*其他PWM*/
 
@@ -198,7 +198,7 @@ static u32 Get_Cycle(u8 pwmx)
     return pwm_structs[pwmx-1].clk_freq / pwm_structs[pwmx-1].pwm_freq;
 }
 
-/*获取pwm波占空比*/
+/*设置pwm波占空比*/
 int PWM_SetDuty(u8 pwmx, float duty)
 {
     TIM_TypeDef * timx = Get_TIMx(pwm_structs[pwmx-1].timx);
@@ -206,6 +206,26 @@ int PWM_SetDuty(u8 pwmx, float duty)
     
     assert_param(pwmx>=1 && pwmx<=pwm_total);
     assert_param(duty<=100);
+    switch (pwm_structs[pwmx-1].chx)
+    {
+        case 1: timx->CCR1 = ccrx; break;
+        case 2: timx->CCR2 = ccrx; break;
+        case 3: timx->CCR3 = ccrx; break;
+        case 4: timx->CCR4 = ccrx; break;
+        default:    break;
+    }   
+    
+    return 1;
+}
+/*设置pwm频率*/
+int PWM_SetFreq(u8 pwmx, float duty, u32 freq)
+{
+    TIM_TypeDef * timx = Get_TIMx(pwm_structs[pwmx-1].timx);
+    u32 ccrx = duty * pwm_structs[pwmx-1].clk_freq / freq / 100;
+    timx->ARR = pwm_structs[pwmx-1].clk_freq / freq;
+    assert_param(pwmx>=1 && pwmx<=pwm_total);
+    assert_param(duty<=100);
+
     switch (pwm_structs[pwmx-1].chx)
     {
         case 1: timx->CCR1 = ccrx; break;

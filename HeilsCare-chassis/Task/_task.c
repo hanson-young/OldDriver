@@ -40,7 +40,8 @@
 #include "../Algorithm/_math.h"
 #include "_serial.h"
 
-
+#define UtralThreshold 60
+#define FrThreshold 1300
 void Load_Drow_Dialog(void)
 {
 	LCD_Clear(WHITE);//ÇåÆÁ   
@@ -86,7 +87,7 @@ u8 testflag2 = 0;
 u8 testflag3 = 0;
 
 
-void test();
+//void test();
 	u8 PS2_key;
 char SdTPC[64] = {0};
 //02 03 00 00 00 1A C4 32
@@ -192,19 +193,123 @@ extern u32 pc_cnt;
 u32 last_pc_cnt = 0;
 u32 time_count = 0;
 u8 time_out = 0;
+extern void ws2812b();
+extern volatile u32 AdData[6];
+u8 IsFcrash = 0;
+u8 IsBcrash = 0;
 void MainTask(void)
 {
+	int SPEED_Y = 0;
+	int SPEED_Z = 0;
+	ws2812b();
 	while(1)
 	{
+		//ws2812b();
+		//delay_ms(500);
 		GetUltrasonic();
-		SetCursor(0,0);
-		LCD_WriteString("speedy:");		
-		LCD_WriteFloat(PcData.speed_y.fl32);
-		SetCursor(0,20);
-		LCD_WriteString("speedz:");		
-		LCD_WriteFloat(PcData.speed_rot.fl32);
 
+//		Data[5] = 0;
+//		Data[6] = 0;
+//		PS2_key=PS2_DataKey();
+		SPEED_Y = PcData.speed_y.fl32;
+		SPEED_Z = PcData.speed_rot.fl32;
+//		if(IsFcrash || !(GPIOC->IDR & GPIO_Pin_12))
+//		{
+//			if(SPEED_Y > 0 || SPEED_Z != 0)
+//			{
+//					SPEED_Y = 0;
+//					SPEED_Z = 0;
+//			}	
+//		}
+
+//		if(IsBcrash || !(GPIOC->IDR & GPIO_Pin_13))
+//		{
+//			if(SPEED_Y < 0 || SPEED_Z != 0)
+//			{
+//					SPEED_Y = 0;
+//					SPEED_Z = 0;
+//			}	
+//		}
+//		if(!IsFcrash || (GPIOC->IDR & GPIO_Pin_12))
+//		{
+//			IsFcrash = 0;
+//		}
+//		if(!IsBcrash || (GPIOC->IDR & GPIO_Pin_13))
+//		{
+//			IsBcrash = 0;
+//		}
+		if(AdData[1] < FrThreshold || AdData[2] < FrThreshold)
+		{
+			if(SPEED_Y > 0 || SPEED_Z != 0)
+			{
+				SPEED_Y = 0;
+				SPEED_Z = 0;
+				setDiffSpeed(SPEED_Y, SPEED_Z);
+			}
+		}
+		if(AdData[0] < FrThreshold || AdData[3] < FrThreshold)
+		{
+			if(SPEED_Y < 0 || SPEED_Z != 0)
+			{
+				SPEED_Y = 0;
+				SPEED_Z = 0;
+				setDiffSpeed(SPEED_Y, SPEED_Z);
+			}
+		}
+		if(Ultrasonic[0].filterdistance < UtralThreshold || Ultrasonic[1].filterdistance < UtralThreshold || Ultrasonic[2].filterdistance < UtralThreshold)
+		{
+			if(SPEED_Y > 0)
+			{
+				SPEED_Y = 0;
+				setDiffSpeed(SPEED_Y, SPEED_Z);
+			}
+		}
 		
+//		if(Ultrasonic[3].filterdistance < 20 || Ultrasonic[4].filterdistance < 20)
+//		{
+//			if(SPEED_Y < 0)
+//			{
+//					SPEED_Y = 0;
+//			}
+//		}
+		
+//		SetCursor(0,0);
+//		LCD_WriteString("HeilsCare1.2:");
+//		SetCursor(0,20);
+//		LCD_WriteString("SPEED_Y:");
+//		LCD_WriteFloat(SPEED_Y);
+//		SetCursor(0,40);
+//		LCD_WriteString("SPEED_Z:");		
+//		LCD_WriteFloat(SPEED_Z);
+//		SetCursor(0,60);
+//		LCD_WriteString("U1:");		
+//		LCD_WriteFloat(Ultrasonic[0].filterdistance);
+//		LCD_WriteString("U2:");   
+//		LCD_WriteFloat(Ultrasonic[1].filterdistance);
+//		SetCursor(0,80);
+//		LCD_WriteString("U3:");		
+//		LCD_WriteFloat(Ultrasonic[2].filterdistance);
+//		LCD_WriteString("U4:");		
+//		LCD_WriteFloat(Ultrasonic[3].filterdistance);
+//		SetCursor(0,100);
+//		LCD_WriteString("U5:");	
+//		LCD_WriteFloat(Ultrasonic[4].filterdistance);
+//		SetCursor(0,120);
+//		LCD_WriteString("F1:");		
+//		LCD_WriteFloat(AdData[0]);
+//		LCD_WriteString("F2:");
+//		LCD_WriteFloat(AdData[1]);
+//		SetCursor(0,140);
+//		LCD_WriteString("F3:");		
+//		LCD_WriteFloat(AdData[2]);
+//		LCD_WriteString("F4:");		
+//		LCD_WriteFloat(AdData[3]);
+//		SetCursor(0,160);
+//		LCD_WriteString("Fcrash:");
+//		LCD_WriteFloat(IsFcrash);
+//		LCD_WriteString("Bcrash:");
+//		LCD_WriteFloat(IsBcrash);
+
 		if(pc_cnt == last_pc_cnt)
 		{
 			time_count++;
@@ -218,12 +323,14 @@ void MainTask(void)
 		}
 		if(time_out)
 		{
-			setDiffSpeed(0,0);
+			SPEED_Y = 0;
+			SPEED_Z = 0;
+			setDiffSpeed(SPEED_Y,SPEED_Z);
 		}
 		else
 		{
 			sendStr2Pc();
-			setDiffSpeed(PcData.speed_y.fl32,PcData.speed_rot.fl32);
+			setDiffSpeed(SPEED_Y, SPEED_Z);
 		}
 		last_pc_cnt = pc_cnt;
 		delay_ms(10);

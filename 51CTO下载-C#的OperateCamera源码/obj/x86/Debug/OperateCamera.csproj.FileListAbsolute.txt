@@ -1,0 +1,13 @@
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\bin\Debug\OperateCamera.exe
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\bin\Debug\OperateCamera.pdb
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\bin\Debug\AForge.Controls.dll
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\bin\Debug\AForge.dll
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\bin\Debug\AForge.Imaging.dll
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\bin\Debug\AForge.Video.dll
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\obj\x86\Debug\OperateCamera.csprojResolveAssemblyReference.cache
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\obj\x86\Debug\OperateCamera.Form1.resources
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\obj\x86\Debug\OperateCamera.Properties.Resources.resources
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\obj\x86\Debug\OperateCamera.csproj.GenerateResource.Cache
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\obj\x86\Debug\OperateCamera.exe
+C:\Users\snow\Desktop\GitHub\51CTO下载-C#的OperateCamera源码\obj\x86\Debug\OperateCamera.pdb

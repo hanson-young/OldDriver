@@ -36,5 +36,6 @@ extern unsigned char ultrasonic_num;
 #define MEAN 3
 #define SIDE 1
 #define Threshold 21
+#define ultraTotalNum 5
 #endif
 

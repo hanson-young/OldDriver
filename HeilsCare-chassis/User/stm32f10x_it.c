@@ -272,6 +272,27 @@ void TIM4_IRQHandler(void)
 	}
 }
 
+u8 overFlag = 0;
+//void TIM5_IRQHandler(void)
+//{
+//	
+//	if(TIM_GetITStatus(TIM5,TIM_IT_Update) == SET)
+//	{
+//		TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
+//		if(overFlag == 0)
+//		{
+//			GPIOA -> BRR = GPIO_Pin_1;
+//		}
+//		else
+//		{
+//			GPIOA -> BSRR = GPIO_Pin_1;
+//		}
+//		overFlag = ~overFlag;
+//			
+
+//	}
+//}
+
 /************************0--4**************************/
 void EXTI0_IRQHandler(void)
 {
@@ -338,7 +359,7 @@ void EXTI2_IRQHandler(void)
 }
 
 void EXTI3_IRQHandler(void)
-{
+{ 
 	EXTI->PR = EXTI_Line3;////PC3
 	if(Ultrasonic[3].GPIO_IN->IDR & Ultrasonic[3].Pin_In)
 	{
@@ -397,6 +418,8 @@ void EXTI9_5_IRQHandler(void)
 	}
 }
 /************************10--15**************************/
+extern u8 IsFcrash;
+extern u8 IsBcrash;
 void EXTI15_10_IRQHandler(void)
 {
 
@@ -412,11 +435,13 @@ void EXTI15_10_IRQHandler(void)
 
 	if((EXTI->PR & EXTI_Line12) != (uint32_t)RESET)   
  	{
+		IsFcrash = 1;
 		EXTI->PR = EXTI_Line12;//key2
 	}
 
 	if((EXTI->PR & EXTI_Line13) != (uint32_t)RESET)
 	{
+		IsBcrash = 1;
 		EXTI->PR = EXTI_Line13; //key4
 	}
 	

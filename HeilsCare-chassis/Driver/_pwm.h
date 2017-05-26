@@ -11,7 +11,7 @@
 void PWM_Init(void);
 u32  PWM_GetDuty(u8 PWMx);
 int  PWM_SetDuty(u8 PWMx, float Duty);
-
+int PWM_SetFreq(u8 pwmx, float duty, u32 freq);
 #endif 
 
 /**********************************END OF FILE*********************************/

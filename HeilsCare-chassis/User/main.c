@@ -45,24 +45,25 @@ void QEI_Init(void);
 	TIM_Config();
 	delay_init();	    //延时函数初始化	
 	//Can1_Init();
-  PWM_Init();
+  
 	Usart_Init();
 	// QEI_Init();
  	IO_Init();
-	PS2_Init();
-	PID_Clear();
+	//PS2_Init();
+	//PID_Clear();
 	//NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级
 	LCD_Init();	
 
- 	tp_dev.init();
-	LCD_Clear(WHITE);//清屏
- 	POINT_COLOR=RED;//设置字体为红色 
-	LCD_ShowString(60,50,200,16,16,"HeilsCar");	
-	LCD_ShowString(60,110,200,16,16,"2016-8-7");
+ 	//tp_dev.init();
+//	LCD_Clear(WHITE);//清屏
+// 	POINT_COLOR=RED;//设置字体为红色 
+//	LCD_ShowString(60,50,200,16,16,"HeilsCare");	
+//	LCD_ShowString(60,110,200,16,16,"2016-8-7");
 	adcinit();
+	PWM_Init();
 	delay_ms(1500);
-LCD_Clear(WHITE);	
-//	SetSpeed(0,0,100);
+//	LCD_Clear(WHITE);	
+
 #ifdef TASK
 	OSInit();   
  	OSTaskCreate(TaskStructs[0].FunTask,
